@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackToTop();
   initScrollAnimations();
   initContactInquiryForm();
+  initPdpGallery();
+  initHeroMagazineSlider();
+  initBlogFilter();
 });
 
 /* ==========================================================================
@@ -24,6 +27,7 @@ function initStickyHeader() {
   if (!header) return;
 
   const handleScroll = () => {
+    if (header.classList.contains('header-solid')) return;
     if (window.scrollY > 30) {
       header.classList.add('is-scrolled');
     } else {
@@ -158,6 +162,7 @@ function initGalleryAndLightbox() {
   const filterBtns = document.querySelectorAll('.gallery-filter-bar .filter-btn');
   const galleryItems = document.querySelectorAll('.bento-gallery-grid .bento-item');
   const dialog = document.getElementById('gallery-lightbox-dialog');
+  const loadMoreBtn = document.getElementById('gallery-load-more-btn');
 
   // Filter items
   if (filterBtns.length > 0 && galleryItems.length > 0) {
@@ -169,13 +174,40 @@ function initGalleryAndLightbox() {
         const filterVal = btn.getAttribute('data-filter') || 'semua';
         galleryItems.forEach((item) => {
           const cat = item.getAttribute('data-category');
-          if (filterVal === 'semua' || cat === filterVal) {
-            item.style.display = 'block';
+          const isExtra = item.classList.contains('is-hidden-extra');
+          if (filterVal === 'semua') {
+            item.style.display = isExtra ? 'none' : 'block';
           } else {
-            item.style.display = 'none';
+            if (cat === filterVal) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
           }
         });
       });
+    });
+  }
+
+  // Load More Button
+  if (loadMoreBtn) {
+    const extraItems = document.querySelectorAll('.bento-item.is-hidden-extra');
+    loadMoreBtn.addEventListener('click', () => {
+      const activeFilter = document.querySelector('.gallery-filter-bar .filter-btn.is-active')?.getAttribute('data-filter') || 'semua';
+      extraItems.forEach((item) => {
+        item.classList.remove('is-hidden-extra');
+        item.classList.add('fade-in');
+        const cat = item.getAttribute('data-category');
+        if (activeFilter === 'semua' || cat === activeFilter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      loadMoreBtn.innerHTML = `<span>Semua Dokumentasi Ditampilkan</span> <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>`;
+      loadMoreBtn.disabled = true;
+      loadMoreBtn.classList.add('is-completed');
     });
   }
 
@@ -188,29 +220,43 @@ function initGalleryAndLightbox() {
   const prevBtn = dialog.querySelector('.lightbox-nav-prev');
   const nextBtn = dialog.querySelector('.lightbox-nav-next');
 
-  let activeIndex = 0;
-  const itemsArray = Array.from(galleryItems);
+  let activeVisibleIndex = 0;
+
+  const getVisibleItems = () => {
+    return Array.from(galleryItems).filter((item) => {
+      const isDisplayNone = item.style.display === 'none' || (window.getComputedStyle(item).display === 'none');
+      return !isDisplayNone;
+    });
+  };
 
   const showImage = (index) => {
-    if (itemsArray.length === 0) return;
-    activeIndex = (index + itemsArray.length) % itemsArray.length;
-    const currentItem = itemsArray[activeIndex];
+    const visibleItems = getVisibleItems();
+    if (visibleItems.length === 0) return;
+    activeVisibleIndex = (index + visibleItems.length) % visibleItems.length;
+    const currentItem = visibleItems[activeVisibleIndex];
     const imgEl = currentItem.querySelector('img');
-    const titleEl = currentItem.querySelector('.bento-caption h4');
+    const titleEl = currentItem.querySelector('.bento-title') || currentItem.querySelector('.bento-caption h4');
+    const kickerEl = currentItem.querySelector('.bento-kicker') || currentItem.querySelector('.bento-caption p');
 
     if (imgEl && lightboxImg) {
       lightboxImg.src = imgEl.src;
       lightboxImg.alt = imgEl.alt || 'Dokumentasi Vendor Outbound';
     }
-    if (titleEl && lightboxCaption) {
-      lightboxCaption.textContent = titleEl.textContent;
+    if (lightboxCaption) {
+      const titleText = titleEl ? titleEl.textContent : '';
+      const kickerText = kickerEl ? kickerEl.textContent : '';
+      lightboxCaption.innerHTML = `<strong>${titleText}</strong>${kickerText ? `<span style="display:block; font-size:0.85rem; opacity:0.8; margin-top:4px; color:var(--accent-warm);">${kickerText}</span>` : ''}`;
     }
   };
 
-  galleryItems.forEach((item, index) => {
+  galleryItems.forEach((item) => {
     item.addEventListener('click', () => {
-      showImage(index);
-      dialog.showModal();
+      const visibleItems = getVisibleItems();
+      const idx = visibleItems.indexOf(item);
+      if (idx !== -1) {
+        showImage(idx);
+        dialog.showModal();
+      }
     });
   });
 
@@ -219,12 +265,12 @@ function initGalleryAndLightbox() {
     if (e.target === dialog) dialog.close();
   });
 
-  prevBtn?.addEventListener('click', () => showImage(activeIndex - 1));
-  nextBtn?.addEventListener('click', () => showImage(activeIndex + 1));
+  prevBtn?.addEventListener('click', () => showImage(activeVisibleIndex - 1));
+  nextBtn?.addEventListener('click', () => showImage(activeVisibleIndex + 1));
 
   dialog.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') showImage(activeIndex - 1);
-    if (e.key === 'ArrowRight') showImage(activeIndex + 1);
+    if (e.key === 'ArrowLeft') showImage(activeVisibleIndex - 1);
+    if (e.key === 'ArrowRight') showImage(activeVisibleIndex + 1);
   });
 }
 
@@ -427,32 +473,53 @@ function initContactInquiryForm() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const name = document.getElementById('inquiry-name')?.value?.trim() || '';
-    const org = document.getElementById('inquiry-org')?.value?.trim() || 'Perorangan / Komunitas';
-    const program = document.getElementById('inquiry-program')?.value || 'Konsultasi Outbound Umum';
+    const firstName = document.getElementById('inquiry-first-name')?.value?.trim() || '';
+    const lastName = document.getElementById('inquiry-last-name')?.value?.trim() || '';
+    const legacyName = document.getElementById('inquiry-name')?.value?.trim() || '';
+    const fullName = [firstName, lastName].filter(Boolean).join(' ') || legacyName;
+
+    const email = document.getElementById('inquiry-email')?.value?.trim() || '';
+    const phone = document.getElementById('inquiry-phone')?.value?.trim() || '';
+    const org = document.getElementById('inquiry-org')?.value?.trim() || lastName || '';
+    const program = document.getElementById('inquiry-program')?.value || 'Konsultasi Outbound';
     const participants = document.getElementById('inquiry-participants')?.value || 'Belum Ditentukan';
-    const location = document.getElementById('inquiry-location')?.value || 'Rekomendasi Vendor';
-    const date = document.getElementById('inquiry-date')?.value?.trim() || 'Menyesuaikan';
+    const location = document.getElementById('inquiry-location')?.value || '';
+    const date = document.getElementById('inquiry-date')?.value?.trim() || '';
     const message = document.getElementById('inquiry-notes')?.value?.trim() || '-';
 
-    if (!name) {
-      alert('Mohon isi nama lengkap Anda.');
+    if (!firstName && !fullName) {
+      alert('Mohon masukkan nama Anda terlebih dahulu.');
+      const fnInput = document.getElementById('inquiry-first-name') || document.getElementById('inquiry-name');
+      fnInput?.focus();
       return;
+    }
+
+    if (!phone && document.getElementById('inquiry-phone')) {
+      alert('Mohon masukkan nomor kontak / WhatsApp Anda agar kami dapat menghubungi Anda.');
+      document.getElementById('inquiry-phone')?.focus();
+      return;
+    }
+
+    let cleanPhone = phone;
+    if (cleanPhone) {
+      cleanPhone = cleanPhone.replace(/^(\+62|62|0)/, '');
+      cleanPhone = '+62 ' + cleanPhone.trim();
     }
 
     const text = [
       'Halo Vendor Outbound,',
       '',
-      'Saya ingin berkonsultasi mengenai rencana kegiatan:',
-      `• Nama: ${name}`,
-      `• Instansi / Perusahaan: ${org}`,
-      `• Jenis Kegiatan: ${program}`,
-      `• Estimasi Peserta: ${participants}`,
-      `• Rencana Lokasi: ${location}`,
-      `• Perkiraan Tanggal: ${date}`,
+      'Saya ingin berkonsultasi mengenai rencana kegiatan outbound:',
+      `• Nama: ${fullName}`,
+      org && org !== fullName ? `• Instansi / Perusahaan: ${org}` : '',
+      cleanPhone ? `• No. WhatsApp / HP: ${cleanPhone}` : '',
+      email ? `• Email: ${email}` : '',
+      `• Program Pilihan: ${program}`,
+      `• Estimasi Peserta: ${participants}${location ? ' (' + location + ')' : ''}`,
+      date ? `• Perkiraan Waktu: ${date}` : '',
       message && message !== '-' ? `• Catatan / Pertanyaan: ${message}` : '',
       '',
-      'Mohon informasi ketersediaan jadwal dan rekomendasi programnya.',
+      'Mohon informasi ketersediaan jadwal, rekomendasi venue terbaik, dan draf penawarannya.',
       'Terima kasih.'
     ].filter(Boolean).join('\n');
 
@@ -460,4 +527,194 @@ function initContactInquiryForm() {
     window.open(waUrl, '_blank', 'noopener,noreferrer');
   });
 }
+
+/* ==========================================================================
+   11. PDP INTERACTIVE GALLERY (IMAGE SWITCHER)
+   ========================================================================== */
+function initPdpGallery() {
+  const thumbs = document.querySelectorAll('.pdp-thumb-item');
+  const mainImg = document.getElementById('pdp-main-img');
+  if (!thumbs.length || !mainImg) return;
+
+  let currentLoadingSrc = '';
+
+  thumbs.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      const targetSrc = thumb.getAttribute('data-img');
+      if (!targetSrc) return;
+
+      // Update active state visuals & accessibility across all thumbnails
+      thumbs.forEach(t => {
+        t.classList.remove('active');
+        t.removeAttribute('aria-current');
+      });
+      thumb.classList.add('active');
+      thumb.setAttribute('aria-current', 'true');
+
+      // If already displaying this image, skip reload
+      if (mainImg.getAttribute('src') === targetSrc) {
+        mainImg.style.opacity = '1';
+        return;
+      }
+
+      // Sync alt description from caption or thumbnail
+      const imgInside = thumb.querySelector('.pdp-thumb-img');
+      const captionInside = thumb.querySelector('.pdp-thumb-caption');
+      const targetAlt = (captionInside && captionInside.textContent.trim()) ||
+                        (imgInside && imgInside.getAttribute('alt')) ||
+                        thumb.getAttribute('aria-label') ||
+                        mainImg.alt;
+
+      currentLoadingSrc = targetSrc;
+
+      // Subtle fade transition for modern feel
+      mainImg.style.opacity = '0.35';
+
+      const tempImg = new Image();
+      tempImg.onload = () => {
+        if (currentLoadingSrc === targetSrc) {
+          mainImg.src = targetSrc;
+          if (targetAlt) mainImg.alt = targetAlt;
+          mainImg.style.opacity = '1';
+        }
+      };
+      tempImg.onerror = () => {
+        if (currentLoadingSrc === targetSrc) {
+          mainImg.src = targetSrc;
+          if (targetAlt) mainImg.alt = targetAlt;
+          mainImg.style.opacity = '1';
+        }
+      };
+      tempImg.src = targetSrc;
+    });
+  });
+}
+
+/* ==========================================================================
+   12. CARINO MAGAZINE HERO SLIDER
+   ========================================================================== */
+function initHeroMagazineSlider() {
+  const container = document.querySelector('.mag-hero-main-card');
+  if (!container) return;
+
+  const slides = container.querySelectorAll('.mag-hero-slide-item');
+  const dots = container.querySelectorAll('.mag-dot');
+  const prevBtn = container.querySelector('.mag-hero-prev');
+  const nextBtn = container.querySelector('.mag-hero-next');
+
+  if (slides.length <= 1) return;
+
+  let currentIdx = 0;
+  let autoplayTimer = null;
+
+  const goToSlide = (idx) => {
+    currentIdx = (idx + slides.length) % slides.length;
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('is-active', i === currentIdx);
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('is-active', i === currentIdx);
+    });
+  };
+
+  prevBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    goToSlide(currentIdx - 1);
+    resetAutoplay();
+  });
+
+  nextBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    goToSlide(currentIdx + 1);
+    resetAutoplay();
+  });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      goToSlide(i);
+      resetAutoplay();
+    });
+  });
+
+  const startAutoplay = () => {
+    autoplayTimer = setInterval(() => {
+      goToSlide(currentIdx + 1);
+    }, 6000);
+  };
+
+  const resetAutoplay = () => {
+    if (autoplayTimer) clearInterval(autoplayTimer);
+    startAutoplay();
+  };
+
+  startAutoplay();
+  container.addEventListener('mouseenter', () => {
+    if (autoplayTimer) clearInterval(autoplayTimer);
+  });
+  container.addEventListener('mouseleave', () => {
+    resetAutoplay();
+  });
+}
+
+/* ==========================================================================
+   13. BLOG ARTICLE CATEGORY FILTER
+   ========================================================================== */
+function initBlogFilter() {
+  const filterBar = document.querySelector('.blog-filter-bar');
+  if (!filterBar) return;
+
+  const filterBtns = filterBar.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.mag-card-box, .mag-mini-item');
+  const heroSlider = document.querySelector('.mag-hero-main-card');
+  const heroSlides = document.querySelectorAll('.mag-hero-slide-item');
+  const heroDots = document.querySelectorAll('.mag-dot');
+
+  if (!filterBtns.length) return;
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      filterBtns.forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+
+      const filterVal = btn.getAttribute('data-filter') || 'all';
+
+      // 1. Filter Grid Article Cards & Sidebar Mini Items
+      cards.forEach((card) => {
+        const catAttr = card.getAttribute('data-category') || '';
+        const cats = catAttr.split(/\s+/).filter(Boolean);
+
+        if (filterVal === 'all' || cats.includes(filterVal)) {
+          card.style.display = '';
+          card.classList.remove('fade-in');
+          void card.offsetWidth; // trigger reflow for smooth animation
+          card.classList.add('fade-in');
+        } else {
+          card.style.display = 'none';
+          card.classList.remove('fade-in');
+        }
+      });
+
+      // 2. Synchronize Hero Slider to matching category slide
+      if (heroSlider && heroSlides.length && filterVal !== 'all') {
+        let matchingIndex = -1;
+        heroSlides.forEach((slide, idx) => {
+          const slideCats = (slide.getAttribute('data-category') || '').split(/\s+/).filter(Boolean);
+          if (matchingIndex === -1 && slideCats.includes(filterVal)) {
+            matchingIndex = idx;
+          }
+        });
+
+        if (matchingIndex !== -1) {
+          heroSlides.forEach((s) => s.classList.remove('is-active'));
+          heroDots.forEach((d) => d.classList.remove('is-active'));
+          heroSlides[matchingIndex]?.classList.add('is-active');
+          heroDots[matchingIndex]?.classList.add('is-active');
+        }
+      }
+    });
+  });
+}
+
 
