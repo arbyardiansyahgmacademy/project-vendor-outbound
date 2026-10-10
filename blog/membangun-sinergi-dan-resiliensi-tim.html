@@ -43,7 +43,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="/assets/css/style.css?v=4.1">
+  <link rel="stylesheet" href="/assets/css/style.css?v=4.2">
 
   <!-- Structured Data JSON-LD (SEO, GEO & AEO 2026 Schema Graph) -->
   <script type="application/ld+json">
@@ -440,39 +440,39 @@
             <h2 id="lima-pilar-transformasi">2. Lima Pilar Transformasi Tim Melalui Experiential Learning</h2>
             <p>Program experiential learning yang dirancang oleh <strong>Vendor Outbound</strong> beroperasi pada lima pilar psikologis dan operasional terukur:</p>
 
-            <div style="display:flex;flex-direction:column;gap:18px;margin:24px 0;">
+            <div class="article-pillar-grid">
               
-              <div style="background:#FFFFFF;border:1px solid #E5E7EB;border-left:5px solid var(--maroon-700);padding:20px;border-radius:10px;">
-                <h3 style="margin:0 0 6px 0;color:var(--maroon-900);font-size:1.1rem;">1. Penyelarasan Frekuensi Komunikasi Asertif</h3>
-                <p style="margin:0;color:var(--text-muted);font-size:0.93rem;">
+              <div class="article-pillar-card">
+                <h3>1. Penyelarasan Frekuensi Komunikasi Asertif</h3>
+                <p>
                   Dalam simulasi dengan batas waktu ketat dan instruksi terbatas, peserta dipaksa meninggalkan komunikasi pasif-agresif. Mereka belajar merumuskan pesan yang ringkas, menyampaikan ekspektasi dengan jelas, dan mempraktikkan active listening tanpa berasumsi sepihak.
                 </p>
               </div>
 
-              <div style="background:#FFFFFF;border:1px solid #E5E7EB;border-left:5px solid var(--maroon-700);padding:20px;border-radius:10px;">
-                <h3 style="margin:0 0 6px 0;color:var(--maroon-900);font-size:1.1rem;">2. Penumbuhan Rasa Percaya Berbasis Kerapuhan (Vulnerability-Based Trust)</h3>
-                <p style="margin:0;color:var(--text-muted);font-size:0.93rem;">
+              <div class="article-pillar-card">
+                <h3>2. Penumbuhan Rasa Percaya Berbasis Kerapuhan (Vulnerability-Based Trust)</h3>
+                <p>
                   Kepercayaan sejati tidak lahir dari basa-basi formal di ruang rapat. Melalui simulasi blind-walk, trust-fall terstandarisasi, atau pemecahan teka-teki labirin, peserta diajak merasa aman untuk berkata: "Saya butuh bantuan Anda" atau "Saya tidak tahu caranya, mari kita cari bersama."
                 </p>
               </div>
 
-              <div style="background:#FFFFFF;border:1px solid #E5E7EB;border-left:5px solid var(--maroon-700);padding:20px;border-radius:10px;">
-                <h3 style="margin:0 0 6px 0;color:var(--maroon-900);font-size:1.1rem;">3. Membangun Psychological Safety Antar-Level Jabatan</h3>
-                <p style="margin:0;color:var(--text-muted);font-size:0.93rem;">
+              <div class="article-pillar-card">
+                <h3>3. Membangun Psychological Safety Antar-Level Jabatan</h3>
+                <p>
                   Saat seragam kerja dan jas formal ditanggalkan dan digantikan pakaian outdoor di lapangan rumput, batasan hirarki kaku meluruh. Manajer senior dan staf junior dihadapkan pada tugas fisik setara, membuka ruang bagi ide-ide cerdas tanpa rasa takut dihakimi.
                 </p>
               </div>
 
-              <div style="background:#FFFFFF;border:1px solid #E5E7EB;border-left:5px solid var(--maroon-700);padding:20px;border-radius:10px;">
-                <h3 style="margin:0 0 6px 0;color:var(--maroon-900);font-size:1.1rem;">4. Kepemimpinan Adaptif &amp; Kolaboratif (Shared Leadership)</h3>
-                <p style="margin:0;color:var(--text-muted);font-size:0.93rem;">
+              <div class="article-pillar-card">
+                <h3>4. Kepemimpinan Adaptif &amp; Kolaboratif (Shared Leadership)</h3>
+                <p>
                   Tantangan yang berubah setiap babak melatih setiap peserta untuk bergantian memegang kendali kepemimpinan sesuai keahlian uniknya. Ini mengikis budaya *one-man show* dan melahirkan kesadaran bahwa kemenangan tim adalah hasil orkestrasi bersama.
                 </p>
               </div>
 
-              <div style="background:#FFFFFF;border:1px solid #E5E7EB;border-left:5px solid var(--maroon-700);padding:20px;border-radius:10px;">
-                <h3 style="margin:0 0 6px 0;color:var(--maroon-900);font-size:1.1rem;">5. Pembongkaran Sekat Silo Antar-Departemen</h3>
-                <p style="margin:0;color:var(--text-muted);font-size:0.93rem;">
+              <div class="article-pillar-card">
+                <h3>5. Pembongkaran Sekat Silo Antar-Departemen</h3>
+                <p>
                   Dengan mengacak pembagian kelompok kerja yang mempertemukan divisi Sales, Finance, IT, dan Operations dalam satu perahu atau satu regu, persepsi kluster saling menyalahkan (*blame game*) berganti menjadi empati dan saling memahami kendala operasional.
                 </p>
               </div>
@@ -590,11 +590,13 @@
             <!-- SHARE BUTTONS -->
             <div class="share-section">
               <span class="label"><i class="fas fa-share-nodes"></i> Bagikan Artikel:</span>
-              <button class="share-btn whatsapp" data-share="wa" aria-label="Bagikan ke WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</button>
-              <button class="share-btn facebook" data-share="fb" aria-label="Bagikan ke Facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
-              <button class="share-btn twitter" data-share="tw" aria-label="Bagikan ke Twitter"><i class="fab fa-x-twitter"></i> Twitter</button>
-              <button class="share-btn linkedin" data-share="li" aria-label="Bagikan ke LinkedIn"><i class="fab fa-linkedin-in"></i> LinkedIn</button>
-              <button class="share-btn copy" data-share="copy" aria-label="Salin Link"><i class="fas fa-link"></i> Salin Link</button>
+              <div class="share-buttons-wrap">
+                <button class="share-btn whatsapp" data-share="wa" aria-label="Bagikan ke WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+                <button class="share-btn facebook" data-share="fb" aria-label="Bagikan ke Facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+                <button class="share-btn twitter" data-share="tw" aria-label="Bagikan ke Twitter"><i class="fab fa-x-twitter"></i> Twitter</button>
+                <button class="share-btn linkedin" data-share="li" aria-label="Bagikan ke LinkedIn"><i class="fab fa-linkedin-in"></i> LinkedIn</button>
+                <button class="share-btn copy" data-share="copy" aria-label="Salin Link"><i class="fas fa-link"></i> Salin Link</button>
+              </div>
             </div>
 
           </div>
@@ -674,7 +676,7 @@
     <!-- RECOMMENDED PACKAGES STRIP -->
     <section class="article-recommend-section">
       <div class="container">
-        <div style="margin-bottom:32px;">
+        <div class="article-recommend-header">
           <span class="news-badge badge-primary"><i class="fas fa-layer-group"></i> REKOMENDASI PROGRAM</span>
           <h2 style="font-family:var(--font-serif);font-size:1.8rem;color:var(--maroon-900);margin:8px 0 0 0;">Pilihan Program Gathering &amp; Outbound Unggulan</h2>
         </div>
@@ -822,7 +824,7 @@
   </div>
 
   <!-- Scripts -->
-  <script src="/assets/js/script.js?v=4.1" defer></script>
+  <script src="/assets/js/script.js?v=4.2" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       // 1. Generate Table of Contents automatically from H2
@@ -865,9 +867,26 @@
         });
       });
 
-      // 4. Social Share Buttons Handler
+      // 4. Social Share Buttons Handler with Smooth Feedback
       const url = encodeURIComponent(window.location.href);
       const title = encodeURIComponent(document.title);
+      
+      function fallbackCopyText(text, onSuccess) {
+        const temp = document.createElement('input');
+        temp.value = text;
+        temp.style.position = 'fixed';
+        temp.style.opacity = '0';
+        document.body.appendChild(temp);
+        temp.select();
+        try {
+          document.execCommand('copy');
+          if (onSuccess) onSuccess();
+        } catch (err) {
+          console.error('Copy fallback failed', err);
+        }
+        document.body.removeChild(temp);
+      }
+
       document.querySelectorAll('.share-btn').forEach(btn => {
         btn.addEventListener('click', function () {
           const type = this.getAttribute('data-share');
@@ -877,11 +896,25 @@
             case 'fb': shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url; break;
             case 'tw': shareUrl = 'https://twitter.com/intent/tweet?text=' + title + '&url=' + url; break;
             case 'li': shareUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url; break;
-            case 'copy':
-              navigator.clipboard.writeText(window.location.href).then(() => {
-                alert('Tautan artikel berhasil disalin ke clipboard!');
-              });
+            case 'copy': {
+              const originalHtml = this.innerHTML;
+              const showSuccess = () => {
+                this.innerHTML = '<i class="fas fa-check"></i> Tersalin!';
+                this.classList.add('copied');
+                setTimeout(() => {
+                  this.innerHTML = originalHtml;
+                  this.classList.remove('copied');
+                }, 2000);
+              };
+              if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(window.location.href).then(showSuccess).catch(() => {
+                  fallbackCopyText(window.location.href, showSuccess);
+                });
+              } else {
+                fallbackCopyText(window.location.href, showSuccess);
+              }
               return;
+            }
           }
           if (shareUrl) window.open(shareUrl, '_blank', 'width=600,height=500');
         });
