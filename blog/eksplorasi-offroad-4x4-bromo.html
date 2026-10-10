@@ -188,7 +188,6 @@
   </script>
 </head>
 <body>
-  <a href="#main-content" class="visually-hidden-focusable">Lewati ke konten utama</a>
 
   <!-- =============================================
        SITE HEADER (SOLID GLASSMORPHIC)
@@ -822,102 +821,6 @@
   </div>
 
   <!-- Scripts -->
-  <script src="/assets/js/script.js?v=4.2" defer></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // 1. Generate Table of Contents automatically from H2
-      const content = document.getElementById('articleContent');
-      const tocList = document.getElementById('tocList');
-      if (content && tocList) {
-        const headings = content.querySelectorAll('h2');
-        headings.forEach((h, index) => {
-          const id = h.id || 'section-' + (index + 1);
-          if (!h.id) h.id = id;
-          const li = document.createElement('li');
-          const a = document.createElement('a');
-          a.href = '#' + id;
-          a.textContent = h.textContent;
-          li.appendChild(a);
-          tocList.appendChild(li);
-        });
-      }
-
-      // 2. TOC Accordion Toggle
-      const tocToggle = document.getElementById('tocToggle');
-      const tocBody = document.getElementById('tocBody');
-      if (tocToggle && tocBody) {
-        tocToggle.addEventListener('click', function () {
-          this.classList.toggle('active');
-          tocBody.classList.toggle('open');
-        });
-      }
-
-      // 3. FAQ Accordion Toggle
-      const faqQuestions = document.querySelectorAll('.faq-question');
-      faqQuestions.forEach(btn => {
-        btn.addEventListener('click', function () {
-          const item = this.closest('.faq-item');
-          const isActive = item.classList.contains('active');
-          document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-          if (!isActive) {
-            item.classList.add('active');
-          }
-        });
-      });
-
-      // 4. Social Share Buttons Handler with Smooth Feedback
-      const url = encodeURIComponent(window.location.href);
-      const title = encodeURIComponent(document.title);
-      
-      function fallbackCopyText(text, onSuccess) {
-        const temp = document.createElement('input');
-        temp.value = text;
-        temp.style.position = 'fixed';
-        temp.style.opacity = '0';
-        document.body.appendChild(temp);
-        temp.select();
-        try {
-          document.execCommand('copy');
-          if (onSuccess) onSuccess();
-        } catch (err) {
-          console.error('Copy fallback failed', err);
-        }
-        document.body.removeChild(temp);
-      }
-
-      document.querySelectorAll('.share-btn').forEach(btn => {
-        btn.addEventListener('click', function () {
-          const type = this.getAttribute('data-share');
-          let shareUrl = '';
-          switch (type) {
-            case 'wa': shareUrl = 'https://wa.me/?text=' + title + '%20' + url; break;
-            case 'fb': shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url; break;
-            case 'tw': shareUrl = 'https://twitter.com/intent/tweet?text=' + title + '&url=' + url; break;
-            case 'li': shareUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url; break;
-            case 'copy': {
-              const originalHtml = this.innerHTML;
-              const showSuccess = () => {
-                this.innerHTML = '<i class="fas fa-check"></i> Tersalin!';
-                this.classList.add('copied');
-                setTimeout(() => {
-                  this.innerHTML = originalHtml;
-                  this.classList.remove('copied');
-                }, 2000);
-              };
-              if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(window.location.href).then(showSuccess).catch(() => {
-                  fallbackCopyText(window.location.href, showSuccess);
-                });
-              } else {
-                fallbackCopyText(window.location.href, showSuccess);
-              }
-              return;
-            }
-          }
-          if (shareUrl) window.open(shareUrl, '_blank', 'width=600,height=500');
-        });
-      });
-    });
-  </script>
+  <script src="/assets/js/script.js?v=4.3" defer></script>
 </body>
 </html>

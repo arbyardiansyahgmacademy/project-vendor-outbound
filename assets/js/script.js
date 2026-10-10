@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGalleryAndLightbox();
   initPackageConfigurator();
   initDynamicTOC();
+  initFaqAccordion();
   initShareAndCopy();
   initBackToTop();
   initScrollAnimations();
@@ -404,58 +405,112 @@ function initPackageConfigurator() {
    6. DYNAMIC TABLE OF CONTENTS (TOC) FOR BLOG ARTICLES
    ========================================================================== */
 function initDynamicTOC() {
-  const articleContent = document.querySelector('.article-prose');
-  const tocList = document.querySelector('.toc-list');
-  if (!articleContent || !tocList) return;
+  const articleContent = document.getElementById('articleContent') || document.querySelector('.article-content') || document.querySelector('.article-prose');
+  const tocList = document.getElementById('tocList') || document.querySelector('.toc-list');
 
-  const headings = articleContent.querySelectorAll('h2, h3');
-  if (headings.length === 0) return;
+  if (articleContent && tocList) {
+    const headings = articleContent.querySelectorAll('h2, h3');
+    if (headings.length > 0) {
+      tocList.innerHTML = '';
 
-  tocList.innerHTML = '';
+      headings.forEach((heading, idx) => {
+        const id = heading.id || `section-${idx + 1}`;
+        if (!heading.id) heading.id = id;
 
-  headings.forEach((heading, idx) => {
-    if (!heading.id) {
-      heading.id = `heading-${idx + 1}`;
-    }
-
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.href = `#${heading.id}`;
-    a.textContent = heading.textContent;
-    a.className = 'toc-link';
-    if (heading.tagName === 'H3') {
-      a.style.paddingLeft = '12px';
-      a.style.fontSize = '0.8125rem';
-    }
-
-    li.appendChild(a);
-    tocList.appendChild(li);
-  });
-
-  // Active heading highlighting
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          document.querySelectorAll('.toc-link').forEach((link) => {
-            link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
-          });
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `#${id}`;
+        a.textContent = heading.textContent;
+        a.className = 'toc-link';
+        if (heading.tagName === 'H3') {
+          a.style.paddingLeft = '12px';
+          a.style.fontSize = '0.8125rem';
         }
-      });
-    },
-    { rootMargin: '0px 0px -65% 0px', threshold: 0.1 }
-  );
 
-  headings.forEach((h) => observer.observe(h));
+        li.appendChild(a);
+        tocList.appendChild(li);
+      });
+
+      // Active heading highlighting
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                document.querySelectorAll('.toc-link').forEach((link) => {
+                  link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+                });
+              }
+            });
+          },
+          { rootMargin: '0px 0px -65% 0px', threshold: 0.1 }
+        );
+
+        headings.forEach((h) => observer.observe(h));
+      }
+    }
+  }
+
+  // TOC Accordion Toggle (#tocToggle, .toc-header)
+  const tocToggle = document.getElementById('tocToggle') || document.querySelector('.toc-header');
+  const tocBody = document.getElementById('tocBody') || document.querySelector('.toc-body');
+  if (tocToggle && tocBody && !tocToggle.__tocBound) {
+    tocToggle.__tocBound = true;
+    tocToggle.addEventListener('click', function () {
+      this.classList.toggle('active');
+      tocBody.classList.toggle('open');
+    });
+  }
+}
+
+/* ==========================================================================
+   6B. FAQ ACCORDION COMPONENT
+   ========================================================================== */
+function initFaqAccordion() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach((btn) => {
+    if (btn.__faqBound) return;
+    btn.__faqBound = true;
+    btn.addEventListener('click', function () {
+      const item = this.closest('.faq-item');
+      if (!item) return;
+      const isActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach((i) => i.classList.remove('active'));
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
 }
 
 /* ==========================================================================
    7. SOCIAL SHARE & CLIPBOARD COPY URL
    ========================================================================== */
 function initShareAndCopy() {
+  const url = encodeURIComponent(window.location.href);
+  const title = encodeURIComponent(document.title);
+
+  function fallbackCopyText(text, onSuccess) {
+    const temp = document.createElement('input');
+    temp.value = text;
+    temp.style.position = 'fixed';
+    temp.style.opacity = '0';
+    document.body.appendChild(temp);
+    temp.select();
+    try {
+      document.execCommand('copy');
+      if (onSuccess) onSuccess();
+    } catch (err) {
+      console.error('Copy fallback failed', err);
+    }
+    document.body.removeChild(temp);
+  }
+
+  // 1. Classic copy button (.btn-copy-url)
   const copyBtn = document.querySelector('.btn-copy-url');
-  if (copyBtn) {
+  if (copyBtn && !copyBtn.__copyBound) {
+    copyBtn.__copyBound = true;
     copyBtn.addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(window.location.href);
@@ -465,12 +520,64 @@ function initShareAndCopy() {
           copyBtn.innerHTML = originalText;
         }, 2500);
       } catch {
-        prompt('Salin link berikut:', window.location.href);
+        fallbackCopyText(window.location.href, () => {
+          const originalText = copyBtn.innerHTML;
+          copyBtn.innerHTML = '<span>Tersalin! ✓</span>';
+          setTimeout(() => {
+            copyBtn.innerHTML = originalText;
+          }, 2500);
+        });
       }
     });
   }
 
-  // Social Share links
+  // 2. Share buttons with data-share attribute (.share-btn[data-share])
+  const shareButtons = document.querySelectorAll('.share-btn[data-share]');
+  shareButtons.forEach((btn) => {
+    if (btn.__shareBound) return;
+    btn.__shareBound = true;
+
+    btn.addEventListener('click', function () {
+      const type = this.getAttribute('data-share');
+      let shareUrl = '';
+      switch (type) {
+        case 'wa':
+          shareUrl = 'https://wa.me/?text=' + title + '%20' + url;
+          break;
+        case 'fb':
+          shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+          break;
+        case 'tw':
+          shareUrl = 'https://twitter.com/intent/tweet?text=' + title + '&url=' + url;
+          break;
+        case 'li':
+          shareUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+          break;
+        case 'copy': {
+          const originalHtml = this.innerHTML;
+          const showSuccess = () => {
+            this.innerHTML = '<i class="fas fa-check"></i> Tersalin!';
+            this.classList.add('copied');
+            setTimeout(() => {
+              this.innerHTML = originalHtml;
+              this.classList.remove('copied');
+            }, 2000);
+          };
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(window.location.href).then(showSuccess).catch(() => {
+              fallbackCopyText(window.location.href, showSuccess);
+            });
+          } else {
+            fallbackCopyText(window.location.href, showSuccess);
+          }
+          return;
+        }
+      }
+      if (shareUrl) window.open(shareUrl, '_blank', 'width=600,height=500');
+    });
+  });
+
+  // 3. Classic WA link
   const shareWa = document.querySelector('.btn-share-wa');
   if (shareWa) {
     shareWa.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(document.title + ' ' + window.location.href)}`;
@@ -927,6 +1034,7 @@ function initPageTransitionsAndPrefetch() {
     initGalleryAndLightbox();
     initPackageConfigurator();
     initDynamicTOC();
+    initFaqAccordion();
     initShareAndCopy();
     initBackToTop();
     initScrollAnimations();
@@ -988,7 +1096,7 @@ function initPageTransitionsAndPrefetch() {
         return;
       }
 
-      // 3. Close mobile drawer if open
+      // 3. Close mobile drawer if open & remove any stale skip-link text
       const drawer = document.querySelector('.mobile-drawer');
       const overlay = document.querySelector('.mobile-drawer-overlay');
       if (drawer?.classList.contains('is-active')) {
@@ -996,6 +1104,7 @@ function initPageTransitionsAndPrefetch() {
         overlay?.classList.remove('is-active');
         document.body.style.overflow = '';
       }
+      document.querySelectorAll('.visually-hidden-focusable, .skip-link').forEach((el) => el.remove());
 
       // 4. Swap Content with View Transition API or snappy CSS fallback
       const applySwap = () => {
