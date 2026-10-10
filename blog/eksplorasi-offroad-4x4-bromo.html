@@ -41,8 +41,16 @@
   <!-- Stylesheets & Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=Outfit:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=Outfit:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=Outfit:wght@500;600;700;800&display=swap">
+  </noscript>
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  </noscript>
   <link rel="stylesheet" href="/assets/css/style.css?v=4.2">
 
   <!-- Structured Data JSON-LD (SEO, GEO & AEO 2026 Schema Graph) -->
@@ -186,6 +194,7 @@
   ]
 }
   </script>
+  <link rel="preload" as="image" href="/assets/images/gallery/offroad-jeep.webp" type="image/webp" fetchpriority="high">
 </head>
 <body>
 
@@ -294,7 +303,7 @@
 
   <!-- MOBILE DRAWER NAVIGATION -->
   <div class="mobile-drawer-overlay"></div>
-  <aside class="mobile-drawer" id="mobile-drawer-menu" role="dialog" aria-modal="true" aria-label="Menu Mobile">
+  <div class="mobile-drawer" id="mobile-drawer-menu" role="dialog" aria-modal="true" aria-label="Menu Navigasi Mobile">
     <div class="drawer-header">
       <a href="/" class="brand-logo" aria-label="Vendor Outbound Beranda">
         <img src="/assets/images/logo/logo-fix.webp" alt="Vendor Outbound Logo" class="brand-logo-icon" width="42" height="42">
@@ -326,7 +335,7 @@
         Hotline: +62 822-1122-1909
       </p>
     </div>
-  </aside>
+  </div>
 
   <main id="main-content">
     <!-- BREADCRUMB -->
@@ -356,7 +365,7 @@
             
             <div class="article-meta">
               <div class="author-avatar">
-                <img src="/assets/images/author-artikel/author-artikel-arby-ardiansyah.webp" alt="Arby Ardiansyah" loading="lazy">
+                <img src="/assets/images/author-artikel/author-artikel-arby-ardiansyah.webp" alt="Arby Ardiansyah" loading="lazy" width="120" height="120" decoding="async">
               </div>
               <div class="author-info">
                 <div class="author-name-row">
@@ -427,7 +436,7 @@
             <div class="baca-juga-box">
               <div class="icon"><i class="fas fa-compass"></i></div>
               <div class="thumb">
-                <img src="/assets/images/gallery/offroad-jeep.webp" alt="Paket Offroad Bromo" loading="lazy">
+                <img src="/assets/images/gallery/offroad-jeep.webp" alt="Paket Offroad Bromo" loading="lazy" width="850" height="474" decoding="async">
               </div>
               <div class="content">
                 <div class="label">Program Petualangan</div>
@@ -504,7 +513,7 @@
             <div class="baca-juga-box">
               <div class="icon"><i class="fas fa-shield-halved"></i></div>
               <div class="thumb">
-                <img src="/assets/images/hero/hero-landscape.webp" alt="Tips Memilih Lokasi Outbound" loading="lazy">
+                <img src="/assets/images/hero/hero-landscape.webp" alt="Tips Memilih Lokasi Outbound" loading="lazy" width="1000" height="558" decoding="async">
               </div>
               <div class="content">
                 <div class="label">Panduan Safety</div>
@@ -575,7 +584,7 @@
             <!-- AUTHOR BIO BOX -->
             <div class="author-bio">
               <div class="avatar">
-                <img src="/assets/images/author-artikel/author-artikel-arby-ardiansyah.webp" alt="Arby Ardiansyah" loading="lazy">
+                <img src="/assets/images/author-artikel/author-artikel-arby-ardiansyah.webp" alt="Arby Ardiansyah" loading="lazy" width="120" height="120" decoding="async">
               </div>
               <div class="info">
                 <h4>Arby Ardiansyah</h4>
@@ -607,7 +616,7 @@
             <h3>Artikel Terkait</h3>
             <div class="related-item">
               <div class="thumb">
-                <img src="/assets/images/programs/team-building.webp" alt="Membangun Sinergi Tim" loading="lazy">
+                <img src="/assets/images/programs/team-building.webp" alt="Membangun Sinergi Tim" loading="lazy" width="850" height="635" decoding="async">
               </div>
               <div class="content">
                 <h4><a href="/blog/membangun-sinergi-dan-resiliensi-tim">Membangun Sinergi &amp; Resiliensi Tim Melalui Experiential Learning</a></h4>
@@ -617,7 +626,7 @@
             </div>
             <div class="related-item">
               <div class="thumb">
-                <img src="/assets/images/gallery/night-bonfire.webp" alt="Gala Dinner & Acoustic Bonfire" loading="lazy">
+                <img src="/assets/images/gallery/night-bonfire.webp" alt="Gala Dinner & Acoustic Bonfire" loading="lazy" width="850" height="474" decoding="async">
               </div>
               <div class="content">
                 <h4><a href="/blog/gala-dinner-acoustic-bonfire">Gala Dinner &amp; Acoustic Bonfire: Kehangatan Emosional Karyawan</a></h4>
@@ -643,7 +652,7 @@
             </div>
             <a href="/galeri" style="text-decoration:none;display:block;">
               <div class="news-widget-video-wrap">
-                <img src="/assets/images/gallery/offroad-jeep.webp" alt="Video Liputan Offroad Bromo" class="news-widget-video-thumb" loading="lazy">
+                <img src="/assets/images/gallery/offroad-jeep.webp" alt="Video Liputan Offroad Bromo" class="news-widget-video-thumb" loading="lazy" width="850" height="474" decoding="async">
                 <div class="news-widget-video-overlay"></div>
                 <div class="news-widget-video-play">
                   <i class="fas fa-play"></i>
@@ -681,7 +690,7 @@
         <div class="recommendations grid-240">
           <div class="recommend-item">
             <div class="thumb">
-              <img src="/assets/images/gallery/offroad-jeep.webp" alt="Offroad 4x4 Bromo" loading="lazy">
+              <img src="/assets/images/gallery/offroad-jeep.webp" alt="Offroad 4x4 Bromo" loading="lazy" width="850" height="474" decoding="async">
             </div>
             <div class="body">
               <span class="prod-cat-label">Adventure Trip</span>
@@ -693,7 +702,7 @@
 
           <div class="recommend-item">
             <div class="thumb">
-              <img src="/assets/images/programs/rafting.webp" alt="Outbound Rafting Sungai Deras" loading="lazy">
+              <img src="/assets/images/programs/rafting.webp" alt="Outbound Rafting Sungai Deras" loading="lazy" width="720" height="538" decoding="async">
             </div>
             <div class="body">
               <span class="prod-cat-label">Watersport Adventure</span>
@@ -705,7 +714,7 @@
 
           <div class="recommend-item">
             <div class="thumb">
-              <img src="/assets/images/programs/team-building.webp" alt="Outbound Team Building Dinamis" loading="lazy">
+              <img src="/assets/images/programs/team-building.webp" alt="Outbound Team Building Dinamis" loading="lazy" width="850" height="635" decoding="async">
             </div>
             <div class="body">
               <span class="prod-cat-label">Corporate Team</span>
@@ -803,13 +812,13 @@
   </footer>
 
   <!-- FLOATING ACTIONS (WhatsApp & Back To Top) -->
-  <div class="floating-actions" aria-label="Aksi Cepat">
+  <div class="floating-actions">
     <button type="button" class="back-to-top-btn" aria-label="Kembali ke atas">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
     </button>
 
     <a href="https://wa.me/6282211221909?text=Halo%20Vendor%20Outbound%2C%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20kegiatan%20outbound." target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" aria-label="Konsultasi WhatsApp - Respons Cepat 24 Jam">
-      <span class="floating-wa-badge" aria-label="Pemberitahuan">!</span>
+      <span class="floating-wa-badge" aria-hidden="true">!</span>
       <span class="floating-wa-tooltip" aria-hidden="true">
         <span class="floating-wa-dot"></span>
         Respons Cepat 24 Jam

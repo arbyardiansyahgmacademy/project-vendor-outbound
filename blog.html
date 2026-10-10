@@ -40,9 +40,14 @@
 
   <!-- Stylesheets & Typography -->
   <!-- Google Fonts Preconnect & High-Performance Typography -->
+  <!-- Google Fonts Preconnect & High-Performance Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  </noscript>
   <link rel="stylesheet" href="/assets/css/style.css?v=4.2">
 
   <!-- Structured Data JSON-LD (SEO, GEO & AEO 2026 Schema Graph) -->
@@ -161,6 +166,7 @@
   ]
 }
   </script>
+  <link rel="preload" as="image" href="/assets/images/programs/team-building.webp" type="image/webp" fetchpriority="high">
 </head>
 <body>
   <!-- GLOBAL SITE HEADER (Glassmorphic) -->
@@ -269,7 +275,7 @@
 
   <!-- MOBILE DRAWER NAVIGATION (Accessible) -->
   <div class="mobile-drawer-overlay"></div>
-  <aside class="mobile-drawer" id="mobile-drawer-menu" role="dialog" aria-modal="true" aria-label="Menu Mobile">
+  <div class="mobile-drawer" id="mobile-drawer-menu" role="dialog" aria-modal="true" aria-label="Menu Navigasi Mobile">
     <div class="drawer-header">
       <a href="/" class="brand-logo" aria-label="Vendor Outbound Beranda">
           <img src="/assets/images/logo/logo-fix.webp" alt="Vendor Outbound Logo" class="brand-logo-icon" width="42" height="42">
@@ -321,7 +327,7 @@
         Resmi: +62 822-1122-1909
       </p>
     </div>
-  </aside>
+  </div>
 
 
 
@@ -363,7 +369,7 @@
 
             <!-- Slide 1 (Active) -->
             <div class="mag-hero-slide-item is-active" data-index="0" data-category="team-building leadership">
-              <img src="/assets/images/programs/team-building.webp" alt="Membangun Sinergi dan Resiliensi Tim" class="mag-card-bg" loading="lazy">
+              <img src="/assets/images/programs/team-building.webp" alt="Membangun Sinergi dan Resiliensi Tim" class="mag-card-bg" loading="lazy" width="850" height="635" decoding="async">
               <div class="mag-hero-overlay">
                 <div class="mag-card-content">
                   <span class="mag-badge">STRATEGI HR & LEADERSHIP</span>
@@ -384,7 +390,7 @@
 
             <!-- Slide 2 -->
             <div class="mag-hero-slide-item" data-index="1" data-category="family-gathering">
-              <img src="/assets/images/gallery/night-bonfire.webp" alt="Acoustic Night and Bonfire Gathering" class="mag-card-bg" loading="lazy">
+              <img src="/assets/images/gallery/night-bonfire.webp" alt="Acoustic Night and Bonfire Gathering" class="mag-card-bg" loading="lazy" width="850" height="474" decoding="async">
               <div class="mag-hero-overlay">
                 <div class="mag-card-content">
                   <span class="mag-badge mag-badge-orange">EVENT GATHERING</span>
@@ -405,7 +411,7 @@
 
             <!-- Slide 3 -->
             <div class="mag-hero-slide-item" data-index="2" data-category="wisata-adventure safety-tips">
-              <img src="/assets/images/gallery/offroad-jeep.webp" alt="Eksplorasi Offroad 4x4 Bromo" class="mag-card-bg" loading="lazy">
+              <img src="/assets/images/gallery/offroad-jeep.webp" alt="Eksplorasi Offroad 4x4 Bromo" class="mag-card-bg" loading="lazy" width="850" height="474" decoding="async">
               <div class="mag-hero-overlay">
                 <div class="mag-card-content">
                   <span class="mag-badge mag-badge-purple">PETUALANGAN & ADVENTURE</span>
@@ -445,7 +451,7 @@
 
             <!-- Card 1 -->
             <div class="mag-side-card" data-category="wisata-adventure safety-tips">
-              <img src="/assets/images/hero/hero-landscape.webp" alt="Rekomendasi Tempat Outbound Terbaik di Batu Malang" class="mag-card-bg" loading="lazy">
+              <img src="/assets/images/hero/hero-landscape.webp" alt="Rekomendasi Tempat Outbound Terbaik di Batu Malang" class="mag-card-bg" loading="lazy" width="1000" height="558" decoding="async">
               <div class="mag-side-overlay">
                 <div class="mag-card-content">
                   <span class="mag-badge mag-badge-gold">DESTINASI TERFAVORIT</span>
@@ -464,7 +470,7 @@
 
             <!-- Card 2 -->
             <div class="mag-side-card" data-category="family-gathering">
-              <img src="/assets/images/programs/family-gathering.webp" alt="Panduan Rundown Family Gathering" class="mag-card-bg" loading="lazy">
+              <img src="/assets/images/programs/family-gathering.webp" alt="Panduan Rundown Family Gathering" class="mag-card-bg" loading="lazy" width="850" height="635" decoding="async">
               <div class="mag-side-overlay">
                 <div class="mag-card-content">
                   <span class="mag-badge">FAMILY DAY & FUN GAMES</span>
@@ -501,7 +507,7 @@
 
           <!-- Pick 1 -->
           <div class="mag-card-box" data-category="wisata-adventure family-gathering">
-            <img src="/assets/images/programs/camping-safari.webp" alt="Glamping and Safari Camping" class="mag-card-bg" loading="lazy">
+            <img src="/assets/images/programs/camping-safari.webp" alt="Glamping and Safari Camping" class="mag-card-bg" loading="lazy" width="850" height="635" decoding="async">
             <div class="mag-card-overlay">
               <div class="mag-card-content">
                 <span class="mag-badge mag-badge-purple">CAMPING & GLAMPING</span>
@@ -520,7 +526,7 @@
 
           <!-- Pick 2 -->
           <div class="mag-card-box" data-category="safety-tips wisata-adventure">
-            <img src="/assets/images/programs/rafting.webp" alt="Standar Keselamatan Arung Jeram" class="mag-card-bg" loading="lazy">
+            <img src="/assets/images/programs/rafting.webp" alt="Standar Keselamatan Arung Jeram" class="mag-card-bg" loading="lazy" width="720" height="538" decoding="async">
             <div class="mag-card-overlay">
               <div class="mag-card-content">
                 <span class="mag-badge mag-badge-orange">SAFETY & MITIGASI</span>
@@ -542,7 +548,7 @@
             <div class="mag-corner-badge" title="Galeri Dokumentasi Tersedia">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
             </div>
-            <img src="/assets/images/gallery/paintball-tactical.webp" alt="Simulasi Taktis Paintball" class="mag-card-bg" loading="lazy">
+            <img src="/assets/images/gallery/paintball-tactical.webp" alt="Simulasi Taktis Paintball" class="mag-card-bg" loading="lazy" width="720" height="538" decoding="async">
             <div class="mag-card-overlay">
               <div class="mag-card-content">
                 <span class="mag-badge mag-badge-gold">TACTICAL WARGAME</span>
@@ -584,7 +590,7 @@
               <div class="mag-corner-badge" title="Artikel Terpilih">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="#FFD700" stroke="#FFD700" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
               </div>
-              <img src="/assets/images/programs/outbound-sekolah.webp" alt="Character Building Siswa LDKS" class="mag-card-bg" loading="lazy">
+              <img src="/assets/images/programs/outbound-sekolah.webp" alt="Character Building Siswa LDKS" class="mag-card-bg" loading="lazy" width="850" height="635" decoding="async">
               <div class="mag-card-overlay">
                 <div class="mag-card-content">
                   <span class="mag-badge mag-badge-purple">EDUKASI & LDKS</span>
@@ -603,7 +609,7 @@
 
             <!-- Post 2 -->
             <div class="mag-card-box" data-category="safety-tips leadership">
-              <img src="/assets/images/gallery/night-bonfire.webp" alt="Checklist Persiapan Outbound" class="mag-card-bg" loading="lazy">
+              <img src="/assets/images/gallery/night-bonfire.webp" alt="Checklist Persiapan Outbound" class="mag-card-bg" loading="lazy" width="850" height="474" decoding="async">
               <div class="mag-card-overlay">
                 <div class="mag-card-content">
                   <span class="mag-badge">TIPS EVENT ORGANIZER</span>
@@ -622,7 +628,7 @@
 
             <!-- Post 3 -->
             <div class="mag-card-box" data-category="team-building family-gathering">
-              <img src="/assets/images/programs/team-building.webp" alt="Game Ice Breaking Kreatif" class="mag-card-bg" loading="lazy">
+              <img src="/assets/images/programs/team-building.webp" alt="Game Ice Breaking Kreatif" class="mag-card-bg" loading="lazy" width="850" height="635" decoding="async">
               <div class="mag-card-overlay">
                 <div class="mag-card-content">
                   <span class="mag-badge mag-badge-orange">ICE BREAKING GAMES</span>
@@ -641,7 +647,7 @@
 
             <!-- Post 4 -->
             <div class="mag-card-box" data-category="wisata-adventure safety-tips">
-              <img src="/assets/images/gallery/offroad-jeep.webp" alt="Rute Offroad Coban Talun vs Bromo" class="mag-card-bg" loading="lazy">
+              <img src="/assets/images/gallery/offroad-jeep.webp" alt="Rute Offroad Coban Talun vs Bromo" class="mag-card-bg" loading="lazy" width="850" height="474" decoding="async">
               <div class="mag-card-overlay">
                 <div class="mag-card-content">
                   <span class="mag-badge mag-badge-gold">DESTINASI ALAM</span>
@@ -660,7 +666,7 @@
 
             <!-- Post 5 -->
             <div class="mag-card-box" data-category="leadership team-building">
-              <img src="/assets/images/hero/hero-landscape.webp" alt="Mengukur ROI Outbound" class="mag-card-bg" loading="lazy">
+              <img src="/assets/images/hero/hero-landscape.webp" alt="Mengukur ROI Outbound" class="mag-card-bg" loading="lazy" width="1000" height="558" decoding="async">
               <div class="mag-card-overlay">
                 <div class="mag-card-content">
                   <span class="mag-badge mag-badge-teal">EVALUASI & METRIK HR</span>
@@ -679,7 +685,7 @@
 
             <!-- Post 6 -->
             <div class="mag-card-box" data-category="family-gathering safety-tips">
-              <img src="/assets/images/programs/family-gathering.webp" alt="Strategi Menu Catering Outbound" class="mag-card-bg" loading="lazy">
+              <img src="/assets/images/programs/family-gathering.webp" alt="Strategi Menu Catering Outbound" class="mag-card-bg" loading="lazy" width="850" height="635" decoding="async">
               <div class="mag-card-overlay">
                 <div class="mag-card-content">
                   <span class="mag-badge">HOSPITALITY & F&B</span>
@@ -705,7 +711,7 @@
             <div class="mag-mini-list">
 
               <a href="/blog/manfaat-team-building-untuk-perusahaan" class="mag-mini-item" data-category="team-building leadership">
-                <img src="/assets/images/programs/team-building.webp" alt="Manfaat Team Building Terstruktur" class="mag-mini-thumb" loading="lazy">
+                <img src="/assets/images/programs/team-building.webp" alt="Manfaat Team Building Terstruktur" class="mag-mini-thumb" loading="lazy" width="850" height="635" decoding="async">
                 <div class="mag-mini-info">
                   <h4 class="mag-mini-title">Manfaat Nyata Team Building Terstruktur untuk Budaya Kerja Perusahaan</h4>
                   <span class="mag-mini-meta">oleh Arby Ardiansyah • 08 Okt 2026</span>
@@ -713,7 +719,7 @@
               </a>
 
               <a href="/blog/tips-memilih-lokasi-outbound" class="mag-mini-item" data-category="wisata-adventure safety-tips">
-                <img src="/assets/images/hero/hero-landscape.webp" alt="Panduan Memilih Lokasi Outbound" class="mag-mini-thumb" loading="lazy">
+                <img src="/assets/images/hero/hero-landscape.webp" alt="Panduan Memilih Lokasi Outbound" class="mag-mini-thumb" loading="lazy" width="1000" height="558" decoding="async">
                 <div class="mag-mini-info">
                   <h4 class="mag-mini-title">Panduan Memilih Lokasi Outbound di Jawa Timur yang Aman dan Ideal</h4>
                   <span class="mag-mini-meta">oleh Arby Ardiansyah • 06 Okt 2026</span>
@@ -721,7 +727,7 @@
               </a>
 
               <a href="/blog/perbedaan-outbound-dan-gathering" class="mag-mini-item" data-category="family-gathering team-building">
-                <img src="/assets/images/programs/family-gathering.webp" alt="Perbedaan Outbound dan Gathering" class="mag-mini-thumb" loading="lazy">
+                <img src="/assets/images/programs/family-gathering.webp" alt="Perbedaan Outbound dan Gathering" class="mag-mini-thumb" loading="lazy" width="850" height="635" decoding="async">
                 <div class="mag-mini-info">
                   <h4 class="mag-mini-title">Memahami Perbedaan Mendasar Antara Outbound dan Gathering Perusahaan</h4>
                   <span class="mag-mini-meta">oleh Arby Ardiansyah • 04 Okt 2026</span>
@@ -729,7 +735,7 @@
               </a>
 
               <a href="/blog/" class="mag-mini-item" data-category="safety-tips wisata-adventure">
-                <img src="/assets/images/programs/rafting.webp" alt="Perlengkapan Wajib Outbound Alam" class="mag-mini-thumb" loading="lazy">
+                <img src="/assets/images/programs/rafting.webp" alt="Perlengkapan Wajib Outbound Alam" class="mag-mini-thumb" loading="lazy" width="720" height="538" decoding="async">
                 <div class="mag-mini-info">
                   <h4 class="mag-mini-title">Checklist Perlengkapan Pribadi yang Wajib Dibawa Saat Outbound Alam</h4>
                   <span class="mag-mini-meta">oleh Arby Ardiansyah • 02 Okt 2026</span>
@@ -741,7 +747,7 @@
             <!-- Video Showcase Widget (Directs to Gallery) -->
             <a href="/galeri" class="mag-video-widget" aria-label="Lihat Video Dokumentasi di Halaman Galeri">
               <div class="mag-video-thumb-wrap">
-                <img src="/assets/images/gallery/team-building.webp" alt="Video Dokumentasi Outbound" class="mag-video-thumb" loading="lazy">
+                <img src="/assets/images/gallery/team-building.webp" alt="Video Dokumentasi Outbound" class="mag-video-thumb" loading="lazy" width="850" height="635" decoding="async">
                 <div class="mag-video-play-pulse">
                   <div class="mag-video-play-btn">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
@@ -786,7 +792,7 @@
       <div class="container">
         <div class="cta-banner-wrapper">
           <div class="cta-banner-bg-media">
-            <img src="/assets/images/hero/hero-landscape.webp" alt="Artikel Wawasan Outbound dan Event Gathering" loading="lazy">
+            <img src="/assets/images/hero/hero-landscape.webp" alt="Artikel Wawasan Outbound dan Event Gathering" loading="lazy" width="1000" height="558" decoding="async">
           </div>
           <div class="cta-banner-overlay"></div>
 
@@ -911,13 +917,13 @@
   </footer>
 
   <!-- FLOATING ACTIONS (WhatsApp & Back To Top) -->
-  <div class="floating-actions" aria-label="Aksi Cepat">
+  <div class="floating-actions">
     <button type="button" class="back-to-top-btn" aria-label="Kembali ke atas">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
     </button>
 
     <a href="https://wa.me/6282211221909?text=Halo%20Vendor%20Outbound%2C%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20kegiatan%20outbound." target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" aria-label="Konsultasi WhatsApp - Respons Cepat 24 Jam">
-      <span class="floating-wa-badge" aria-label="Pemberitahuan">!</span>
+      <span class="floating-wa-badge" aria-hidden="true">!</span>
       <span class="floating-wa-tooltip" aria-hidden="true">
         <span class="floating-wa-dot"></span>
         Respons Cepat 24 Jam

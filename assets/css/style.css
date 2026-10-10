@@ -10138,3 +10138,30 @@ main,
     box-sizing: border-box !important;
   }
 }
+
+/* ==========================================================================
+   CORE WEB VITALS & RENDERING PERFORMANCE OPTIMIZATIONS
+   ========================================================================== */
+
+/* Defer rendering of heavy below-the-fold content to accelerate FCP, LCP & Speed Index */
+@supports (content-visibility: auto) {
+  .testimonial-section,
+  .faq-section,
+  .site-footer,
+  .footer-main,
+  .value-bar-section,
+  .pdp-tabs-section,
+  .gallery-grid-wrap,
+  .author-bio-card,
+  .article-comments,
+  .baca-juga-box {
+    content-visibility: auto;
+    contain-intrinsic-size: auto none auto 500px;
+  }
+}
+
+/* Ensure smooth image layout and avoid layout shift */
+img {
+  text-indent: -9999px; /* Hide broken alt text flicker before paint */
+}
+

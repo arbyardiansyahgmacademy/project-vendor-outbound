@@ -40,10 +40,15 @@
 
   <!-- Stylesheets & Typography -->
   <!-- Google Fonts Preconnect & High-Performance Typography -->
+  <!-- Google Fonts Preconnect & High-Performance Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="/assets/css/style.css?v=4.1">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  </noscript>
+  <link rel="stylesheet" href="/assets/css/style.css?v=4.2">
 
   <!-- Structured Data JSON-LD (SEO, GEO & AEO 2026 Schema Graph) -->
   <script type="application/ld+json">
@@ -161,6 +166,7 @@
   ]
 }
   </script>
+  <link rel="preload" as="image" href="/assets/images/gallery/team-building.webp" type="image/webp" fetchpriority="high">
 </head>
 <body>
         <!-- GLOBAL SITE HEADER (Glassmorphic) -->
@@ -269,7 +275,7 @@
 
   <!-- MOBILE DRAWER NAVIGATION (Accessible) -->
   <div class="mobile-drawer-overlay"></div>
-  <aside class="mobile-drawer" id="mobile-drawer-menu" role="dialog" aria-modal="true" aria-label="Menu Mobile">
+  <div class="mobile-drawer" id="mobile-drawer-menu" role="dialog" aria-modal="true" aria-label="Menu Navigasi Mobile">
     <div class="drawer-header">
       <a href="/" class="brand-logo" aria-label="Vendor Outbound Beranda">
           <img src="/assets/images/logo/logo-fix.webp" alt="Vendor Outbound Logo" class="brand-logo-icon" width="42" height="42">
@@ -321,7 +327,7 @@
         Resmi: +62 822-1122-1909
       </p>
     </div>
-  </aside>
+  </div>
 
 <main id="main-content">
     <section class="page-header">
@@ -356,7 +362,7 @@
           <!-- ROW 1: SPLIT 2 COLUMNS (5 COLS & 7 COLS) -->
           <!-- Card 1: Narrower Column (5 Cols) -->
           <div class="bento-item bento-span-5" data-category="perusahaan" tabindex="0" role="button" aria-label="Foto Team Building Kayu Sinergis">
-            <img src="/assets/images/gallery/team-building.webp" alt="Team Building Kolaborasi Kayu di Batu" loading="lazy">
+            <img src="/assets/images/gallery/team-building.webp" alt="Team Building Kolaborasi Kayu di Batu" loading="lazy" width="850" height="635" decoding="async">
             <div class="bento-overlay">
               <div class="bento-caption">
                 <span class="bento-kicker">Corporate Outbound • Batu Malang</span>
@@ -367,7 +373,7 @@
 
           <!-- Card 2: Wider Column (7 Cols) -->
           <div class="bento-item bento-span-7" data-category="perusahaan" tabindex="0" role="button" aria-label="Foto Acoustic Night Bonfire Celebration">
-            <img src="/assets/images/gallery/night-bonfire.webp" alt="Acoustic Night Bonfire Celebration di Resort Batu" loading="lazy">
+            <img src="/assets/images/gallery/night-bonfire.webp" alt="Acoustic Night Bonfire Celebration di Resort Batu" loading="lazy" width="850" height="474" decoding="async">
             <div class="bento-overlay">
               <div class="bento-caption">
                 <span class="bento-kicker">Gala Dinner • Resort Songgoriti</span>
@@ -379,7 +385,7 @@
           <!-- ROW 2: FULL WIDTH PANORAMIC (12 COLS) -->
           <!-- Card 3: 100% Panoramic Hero Feature -->
           <div class="bento-item bento-span-12" data-category="wisata" tabindex="0" role="button" aria-label="Foto Ekspedisi Arung Jeram Sungai Kasembon">
-            <img src="/assets/images/gallery/rafting.webp" alt="Ekspedisi Arung Jeram Adventure Rafting Kasembon" loading="lazy">
+            <img src="/assets/images/gallery/rafting.webp" alt="Ekspedisi Arung Jeram Adventure Rafting Kasembon" loading="lazy" width="720" height="538" decoding="async">
             <div class="bento-overlay">
               <div class="bento-caption">
                 <span class="bento-kicker">Extreme Adventure • Sungai Kasembon Malang</span>
@@ -391,7 +397,7 @@
           <!-- ROW 3: SPLIT 2 COLUMNS INVERTED (7 COLS & 5 COLS) -->
           <!-- Card 4: Wider Column (7 Cols) -->
           <div class="bento-item bento-span-7" data-category="wisata" tabindex="0" role="button" aria-label="Foto Konvoi Jeep Offroad 4x4 Bromo">
-            <img src="/assets/images/gallery/offroad-jeep.webp" alt="Konvoi Offroad Jeep 4x4 Tour Savana Bromo & Coban Talun" loading="lazy">
+            <img src="/assets/images/gallery/offroad-jeep.webp" alt="Konvoi Offroad Jeep 4x4 Tour Savana Bromo & Coban Talun" loading="lazy" width="850" height="474" decoding="async">
             <div class="bento-overlay">
               <div class="bento-caption">
                 <span class="bento-kicker">Offroad 4x4 • Savana Bromo & Coban Talun</span>
@@ -402,7 +408,7 @@
 
           <!-- Card 5: Narrower Column (5 Cols) -->
           <div class="bento-item bento-span-5" data-category="perusahaan" tabindex="0" role="button" aria-label="Foto Simulasi Tempur Paintball Hutan Pinus">
-            <img src="/assets/images/gallery/paintball-tactical.webp" alt="Simulasi Tempur Paintball & High Rope Course Coban Rondo" loading="lazy">
+            <img src="/assets/images/gallery/paintball-tactical.webp" alt="Simulasi Tempur Paintball & High Rope Course Coban Rondo" loading="lazy" width="720" height="538" decoding="async">
             <div class="bento-overlay">
               <div class="bento-caption">
                 <span class="bento-kicker">Tactical Wargame • Hutan Pinus Coban Rondo</span>
@@ -414,7 +420,7 @@
           <!-- ROW 4: 3 BALANCED EQUAL COLUMNS (4 COLS EACH) -->
           <!-- Card 6: Left Equal (4 Cols) -->
           <div class="bento-item bento-span-4" data-category="sekolah" tabindex="0" role="button" aria-label="Foto Character Building & LDKS Pelajar">
-            <img src="/assets/images/gallery/outbound-sekolah.webp" alt="Character Building & LDKS Siswa di Campsite Pegunungan" loading="lazy">
+            <img src="/assets/images/gallery/outbound-sekolah.webp" alt="Character Building & LDKS Siswa di Campsite Pegunungan" loading="lazy" width="850" height="635" decoding="async">
             <div class="bento-overlay">
               <div class="bento-caption">
                 <span class="bento-kicker">Edukasi & LDKS • Campsite Pegunungan</span>
@@ -425,7 +431,7 @@
 
           <!-- Card 7: Center Equal (4 Cols) -->
           <div class="bento-item bento-span-4" data-category="family" tabindex="0" role="button" aria-label="Foto Keceriaan Fun Games Family Gathering">
-            <img src="/assets/images/gallery/family-gathering.webp" alt="Keceriaan Fun Games Keluarga di Resort Highland" loading="lazy">
+            <img src="/assets/images/gallery/family-gathering.webp" alt="Keceriaan Fun Games Keluarga di Resort Highland" loading="lazy" width="850" height="635" decoding="async">
             <div class="bento-overlay">
               <div class="bento-caption">
                 <span class="bento-kicker">Family Gathering • Resort Highland</span>
@@ -436,7 +442,7 @@
 
           <!-- Card 8: Right Equal (4 Cols) -->
           <div class="bento-item bento-span-4" data-category="wisata" tabindex="0" role="button" aria-label="Foto Highland Camp & Safari Glamping">
-            <img src="/assets/images/gallery/camping-safari.webp" alt="Highland Camp & Safari Glamping VIP di Bromo Sunrise" loading="lazy">
+            <img src="/assets/images/gallery/camping-safari.webp" alt="Highland Camp & Safari Glamping VIP di Bromo Sunrise" loading="lazy" width="850" height="635" decoding="async">
             <div class="bento-overlay">
               <div class="bento-caption">
                 <span class="bento-kicker">Glamping Safari • Bromo Highland Sunrise</span>
@@ -448,7 +454,7 @@
           <!-- EXTRA HIDDEN ITEMS (REVEALED ON LOAD MORE) -->
           <!-- Extra Card 9: 4 Cols -->
           <div class="bento-item bento-span-4 is-hidden-extra" data-category="wisata" tabindex="0" role="button" aria-label="Foto Lanskap Alam Panorama Highland">
-            <img src="/assets/images/hero/hero-landscape.webp" alt="Lanskap Alam Pegunungan Malang Raya" loading="lazy">
+            <img src="/assets/images/hero/hero-landscape.webp" alt="Lanskap Alam Pegunungan Malang Raya" loading="lazy" width="1000" height="558" decoding="async">
             <div class="bento-overlay">
               <div class="bento-caption">
                 <span class="bento-kicker">Panorama Highland • Bukit Paralayang Batu</span>
@@ -459,7 +465,7 @@
 
           <!-- Extra Card 10: 4 Cols -->
           <div class="bento-item bento-span-4 is-hidden-extra" data-category="perusahaan" tabindex="0" role="button" aria-label="Foto Problem Solving Leadership Games">
-            <img src="/assets/images/programs/team-building.webp" alt="Problem Solving Leadership Outbound BUMN" loading="lazy">
+            <img src="/assets/images/programs/team-building.webp" alt="Problem Solving Leadership Outbound BUMN" loading="lazy" width="850" height="635" decoding="async">
             <div class="bento-overlay">
               <div class="bento-caption">
                 <span class="bento-kicker">Leadership Workshop • Kaliwatu Camp</span>
@@ -470,7 +476,7 @@
 
           <!-- Extra Card 11: 4 Cols -->
           <div class="bento-item bento-span-4 is-hidden-extra" data-category="family" tabindex="0" role="button" aria-label="Foto Fun Games Edukasi Alam Keluarga">
-            <img src="/assets/images/programs/family-gathering.webp" alt="Sensory Fun Games & Edukasi Alam Keluarga" loading="lazy">
+            <img src="/assets/images/programs/family-gathering.webp" alt="Sensory Fun Games & Edukasi Alam Keluarga" loading="lazy" width="850" height="635" decoding="async">
             <div class="bento-overlay">
               <div class="bento-caption">
                 <span class="bento-kicker">Family Day • Songgoriti Batu</span>
@@ -481,7 +487,7 @@
 
           <!-- Extra Card 12: 12 Cols Full Width -->
           <div class="bento-item bento-span-12 is-hidden-extra" data-category="sekolah" tabindex="0" role="button" aria-label="Foto Pelatihan Disiplin & Survival Camp Pelajar">
-            <img src="/assets/images/programs/outbound-sekolah.webp" alt="Pelatihan Disiplin & Survival Camp OSIS Sekolah" loading="lazy">
+            <img src="/assets/images/programs/outbound-sekolah.webp" alt="Pelatihan Disiplin & Survival Camp OSIS Sekolah" loading="lazy" width="850" height="635" decoding="async">
             <div class="bento-overlay">
               <div class="bento-caption">
                 <span class="bento-kicker">Leadership Camp • Hutan Pendidikan Claket Pacet</span>
@@ -514,7 +520,7 @@
       <div class="container">
         <div class="cta-banner-wrapper">
           <div class="cta-banner-bg-media">
-            <img src="/assets/images/gallery/team-building.webp" alt="Dokumentasi Outbound dan Gathering Lapangan" loading="lazy">
+            <img src="/assets/images/gallery/team-building.webp" alt="Dokumentasi Outbound dan Gathering Lapangan" loading="lazy" width="850" height="635" decoding="async">
           </div>
           <div class="cta-banner-overlay"></div>
 
@@ -639,13 +645,13 @@
   </footer>
 
   <!-- FLOATING ACTIONS (WhatsApp & Back To Top) -->
-  <div class="floating-actions" aria-label="Aksi Cepat">
+  <div class="floating-actions">
     <button type="button" class="back-to-top-btn" aria-label="Kembali ke atas">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
     </button>
 
     <a href="https://wa.me/6282211221909?text=Halo%20Vendor%20Outbound%2C%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20kegiatan%20outbound." target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" aria-label="Konsultasi WhatsApp - Respons Cepat 24 Jam">
-      <span class="floating-wa-badge" aria-label="Pemberitahuan">!</span>
+      <span class="floating-wa-badge" aria-hidden="true">!</span>
       <span class="floating-wa-tooltip" aria-hidden="true">
         <span class="floating-wa-dot"></span>
         Respons Cepat 24 Jam
@@ -670,6 +676,6 @@
     </div>
   </dialog>
 
-  <script src="/assets/js/script.js?v=4.1" defer></script>
+  <script src="/assets/js/script.js?v=4.2" defer></script>
 </body>
 </html>

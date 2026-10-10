@@ -40,10 +40,15 @@
 
   <!-- Stylesheets & Typography -->
   <!-- Google Fonts Preconnect & High-Performance Typography -->
+  <!-- Google Fonts Preconnect & High-Performance Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="/assets/css/style.css?v=4.1">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  </noscript>
+  <link rel="stylesheet" href="/assets/css/style.css?v=4.2">
 
   <!-- Structured Data JSON-LD (SEO, GEO & AEO 2026 Schema Graph) -->
   <script type="application/ld+json">
@@ -247,6 +252,7 @@
   ]
 }
   </script>
+  <link rel="preload" as="image" href="/assets/images/programs/team-building.webp" type="image/webp" fetchpriority="high">
 </head>
 <body>
 
@@ -356,7 +362,7 @@
 
   <!-- MOBILE DRAWER NAVIGATION (Accessible) -->
   <div class="mobile-drawer-overlay"></div>
-  <aside class="mobile-drawer" id="mobile-drawer-menu" role="dialog" aria-modal="true" aria-label="Menu Mobile">
+  <div class="mobile-drawer" id="mobile-drawer-menu" role="dialog" aria-modal="true" aria-label="Menu Navigasi Mobile">
     <div class="drawer-header">
       <a href="/" class="brand-logo" aria-label="Vendor Outbound Beranda">
           <img src="/assets/images/logo/logo-fix.webp" alt="Vendor Outbound Logo" class="brand-logo-icon" width="42" height="42">
@@ -408,7 +414,7 @@
         Resmi: +62 822-1122-1909
       </p>
     </div>
-  </aside>
+  </div>
 
 <main id="main-content">
     <!-- PAGE HEADER -->
@@ -515,7 +521,7 @@
           <!-- Card 1: Team Building -->
           <article class="catalog-card">
             <div class="catalog-card-media">
-              <img src="/assets/images/programs/team-building.webp" alt="Paket Team Building Perusahaan Batu Malang" loading="lazy">
+              <img src="/assets/images/programs/team-building.webp" alt="Paket Team Building Perusahaan Batu Malang" loading="lazy" width="850" height="635" decoding="async">
               <div class="catalog-badge-cluster">
                 <span class="badge badge-maroon">PALING DIMINATI</span>
                 <span class="badge badge-gold">HRD RECOMENDED</span>
@@ -579,7 +585,7 @@
           <!-- Card 2: Fun Games Refreshing -->
           <article class="catalog-card">
             <div class="catalog-card-media">
-              <img src="/assets/images/hero/hero-landscape.webp" alt="Paket Fun Games Refreshing Perusahaan" loading="lazy">
+              <img src="/assets/images/hero/hero-landscape.webp" alt="Paket Fun Games Refreshing Perusahaan" loading="lazy" width="1000" height="558" decoding="async">
               <div class="catalog-badge-cluster">
                 <span class="badge badge-warm">REKREASI AKTIF</span>
                 <span class="badge badge-maroon">BURNOUT RECOVERY</span>
@@ -643,7 +649,7 @@
           <!-- Card 3: Leadership Camp 2D1N -->
           <article class="catalog-card">
             <div class="catalog-card-media">
-              <img src="/assets/images/programs/camping-safari.webp" alt="Paket Leadership Camp 2D1N Perusahaan" loading="lazy">
+              <img src="/assets/images/programs/camping-safari.webp" alt="Paket Leadership Camp 2D1N Perusahaan" loading="lazy" width="850" height="635" decoding="async">
               <div class="catalog-badge-cluster">
                 <span class="badge badge-maroon">PROGRAM INTENSIF</span>
                 <span class="badge badge-gold">MANAGEMENT LEVEL</span>
@@ -707,7 +713,7 @@
           <!-- Card 4: Corporate Gathering & Gala Dinner -->
           <article class="catalog-card">
             <div class="catalog-card-media">
-              <img src="/assets/images/programs/family-gathering.webp" alt="Paket Corporate Gathering dan Gala Dinner" loading="lazy">
+              <img src="/assets/images/programs/family-gathering.webp" alt="Paket Corporate Gathering dan Gala Dinner" loading="lazy" width="850" height="635" decoding="async">
               <div class="catalog-badge-cluster">
                 <span class="badge badge-maroon">ALL-IN EVENT</span>
                 <span class="badge badge-warm">ANNUAL CELEBRATION</span>
@@ -797,7 +803,7 @@
           <!-- Card 5: Family Hemat -->
           <article class="catalog-card">
             <div class="catalog-card-media">
-              <img src="/assets/images/programs/family-gathering.webp" alt="Paket Family Gathering Hemat Batu" loading="lazy">
+              <img src="/assets/images/programs/family-gathering.webp" alt="Paket Family Gathering Hemat Batu" loading="lazy" width="850" height="635" decoding="async">
               <div class="catalog-badge-cluster">
                 <span class="badge badge-warm">BEST VALUE</span>
                 <span class="badge badge-maroon">EKONOMIS</span>
@@ -861,7 +867,7 @@
           <!-- Card 6: Family Standard -->
           <article class="catalog-card">
             <div class="catalog-card-media">
-              <img src="/assets/images/programs/team-building.webp" alt="Paket Family Gathering Standard Batu Malang" loading="lazy">
+              <img src="/assets/images/programs/team-building.webp" alt="Paket Family Gathering Standard Batu Malang" loading="lazy" width="850" height="635" decoding="async">
               <div class="catalog-badge-cluster">
                 <span class="badge badge-maroon">FAVORIT KELUARGA</span>
                 <span class="badge badge-gold">LENGKAP WAHANA</span>
@@ -925,7 +931,7 @@
           <!-- Card 7: Family Premium Resort -->
           <article class="catalog-card">
             <div class="catalog-card-media">
-              <img src="/assets/images/programs/camping-safari.webp" alt="Paket Family Gathering Premium Resort" loading="lazy">
+              <img src="/assets/images/programs/camping-safari.webp" alt="Paket Family Gathering Premium Resort" loading="lazy" width="850" height="635" decoding="async">
               <div class="catalog-badge-cluster">
                 <span class="badge badge-maroon">FASILITAS BINTANG</span>
                 <span class="badge badge-warm">LUXURY GATHERING</span>
@@ -989,7 +995,7 @@
           <!-- Card 8: Custom Gathering -->
           <article class="catalog-card">
             <div class="catalog-card-media">
-              <img src="/assets/images/hero/hero-landscape.webp" alt="Paket Custom Gathering Tailor-Made" loading="lazy">
+              <img src="/assets/images/hero/hero-landscape.webp" alt="Paket Custom Gathering Tailor-Made" loading="lazy" width="1000" height="558" decoding="async">
               <div class="catalog-badge-cluster">
                 <span class="badge badge-maroon">TAILOR-MADE</span>
                 <span class="badge badge-gold">FLEKSIBEL 100%</span>
@@ -1079,7 +1085,7 @@
           <!-- Card 9: Outbound Pelajar Ceria -->
           <article class="catalog-card">
             <div class="catalog-card-media">
-              <img src="/assets/images/programs/outbound-sekolah.webp" alt="Paket Outbound Pelajar Ceria Sekolah" loading="lazy">
+              <img src="/assets/images/programs/outbound-sekolah.webp" alt="Paket Outbound Pelajar Ceria Sekolah" loading="lazy" width="850" height="635" decoding="async">
               <div class="catalog-badge-cluster">
                 <span class="badge badge-warm">EDUKASI AKTIF</span>
                 <span class="badge badge-maroon">JENJANG TK-SMA</span>
@@ -1143,7 +1149,7 @@
           <!-- Card 10: Character Building Pelajar -->
           <article class="catalog-card">
             <div class="catalog-card-media">
-              <img src="/assets/images/programs/team-building.webp" alt="Paket Character Building Siswa Sekolah" loading="lazy">
+              <img src="/assets/images/programs/team-building.webp" alt="Paket Character Building Siswa Sekolah" loading="lazy" width="850" height="635" decoding="async">
               <div class="catalog-badge-cluster">
                 <span class="badge badge-maroon">DISIPLIN & INTEGRITAS</span>
                 <span class="badge badge-gold">PROGRAM P5</span>
@@ -1207,7 +1213,7 @@
           <!-- Card 11: LDKS Leadership Camp -->
           <article class="catalog-card">
             <div class="catalog-card-media">
-              <img src="/assets/images/programs/camping-safari.webp" alt="Paket LDKS Leadership Camp Siswa Sekolah" loading="lazy">
+              <img src="/assets/images/programs/camping-safari.webp" alt="Paket LDKS Leadership Camp Siswa Sekolah" loading="lazy" width="850" height="635" decoding="async">
               <div class="catalog-badge-cluster">
                 <span class="badge badge-maroon">KADER OSIS & PRAMUKA</span>
                 <span class="badge badge-gold">MENGINAP 2D1N</span>
@@ -1271,7 +1277,7 @@
           <!-- Card 12: Edukasi Alam & Agrowisata -->
           <article class="catalog-card">
             <div class="catalog-card-media">
-              <img src="/assets/images/programs/family-gathering.webp" alt="Paket Edukasi Alam dan Agrowisata Batu" loading="lazy">
+              <img src="/assets/images/programs/family-gathering.webp" alt="Paket Edukasi Alam dan Agrowisata Batu" loading="lazy" width="850" height="635" decoding="async">
               <div class="catalog-badge-cluster">
                 <span class="badge badge-warm">AGROWISATA BATU</span>
                 <span class="badge badge-maroon">STUDI LAPANGAN</span>
@@ -1361,7 +1367,7 @@
           <!-- Card 13: Outbound Rafting -->
           <article class="catalog-card">
             <div class="catalog-card-media">
-              <img src="/assets/images/programs/rafting.webp" alt="Paket Outbound Rafting Kasembon Batu" loading="lazy">
+              <img src="/assets/images/programs/rafting.webp" alt="Paket Outbound Rafting Kasembon Batu" loading="lazy" width="720" height="538" decoding="async">
               <div class="catalog-badge-cluster">
                 <span class="badge badge-maroon">ADRENALIN TINGGI</span>
                 <span class="badge badge-gold">SAFETY STANDAR ISO</span>
@@ -1425,7 +1431,7 @@
           <!-- Card 14: Offroad Safari 4x4 -->
           <article class="catalog-card">
             <div class="catalog-card-media">
-              <img src="/assets/images/hero/hero-landscape.webp" alt="Paket Offroad Safari Jeep 4x4 Batu Malang" loading="lazy">
+              <img src="/assets/images/hero/hero-landscape.webp" alt="Paket Offroad Safari Jeep 4x4 Batu Malang" loading="lazy" width="1000" height="558" decoding="async">
               <div class="catalog-badge-cluster">
                 <span class="badge badge-maroon">JELAJAH MEDAN EKSTREM</span>
                 <span class="badge badge-warm">JEEP OPEN TOP</span>
@@ -1489,7 +1495,7 @@
           <!-- Card 15: Camping Safari & Glamping -->
           <article class="catalog-card">
             <div class="catalog-card-media">
-              <img src="/assets/images/programs/camping-safari.webp" alt="Paket Camping Safari dan Glamping Batu" loading="lazy">
+              <img src="/assets/images/programs/camping-safari.webp" alt="Paket Camping Safari dan Glamping Batu" loading="lazy" width="850" height="635" decoding="async">
               <div class="catalog-badge-cluster">
                 <span class="badge badge-warm">RETRET ALAM BEBAS</span>
                 <span class="badge badge-maroon">CAMPING NYAMAN</span>
@@ -1553,7 +1559,7 @@
           <!-- Card 16: Outbound Wisata Terpadu -->
           <article class="catalog-card">
             <div class="catalog-card-media">
-              <img src="/assets/images/programs/team-building.webp" alt="Paket Outbound Wisata Terpadu Batu Malang" loading="lazy">
+              <img src="/assets/images/programs/team-building.webp" alt="Paket Outbound Wisata Terpadu Batu Malang" loading="lazy" width="850" height="635" decoding="async">
               <div class="catalog-badge-cluster">
                 <span class="badge badge-maroon">KOMBINASI LENGKAP</span>
                 <span class="badge badge-gold">WISATA + GAMES</span>
@@ -1736,7 +1742,7 @@
       <div class="container">
         <div class="cta-banner-wrapper">
           <div class="cta-banner-bg-media">
-            <img src="/assets/images/hero/hero-landscape.webp" alt="Konsultasi Paket Outbound Eksklusif Batu Malang" loading="lazy">
+            <img src="/assets/images/hero/hero-landscape.webp" alt="Konsultasi Paket Outbound Eksklusif Batu Malang" loading="lazy" width="1000" height="558" decoding="async">
           </div>
           <div class="cta-banner-overlay"></div>
 
@@ -1863,13 +1869,13 @@
   </footer>
 
   <!-- FLOATING ACTIONS (WhatsApp & Back To Top) -->
-  <div class="floating-actions" aria-label="Aksi Cepat">
+  <div class="floating-actions">
     <button type="button" class="back-to-top-btn" aria-label="Kembali ke atas">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
     </button>
 
     <a href="https://wa.me/6282211221909?text=Halo%20Vendor%20Outbound%2C%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20kegiatan%20outbound." target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" aria-label="Konsultasi WhatsApp - Respons Cepat 24 Jam">
-      <span class="floating-wa-badge" aria-label="Pemberitahuan">!</span>
+      <span class="floating-wa-badge" aria-hidden="true">!</span>
       <span class="floating-wa-tooltip" aria-hidden="true">
         <span class="floating-wa-dot"></span>
         Respons Cepat 24 Jam
@@ -1882,6 +1888,6 @@
 
 
 
-  <script src="/assets/js/script.js?v=4.1" defer></script>
+  <script src="/assets/js/script.js?v=4.2" defer></script>
 </body>
 </html>

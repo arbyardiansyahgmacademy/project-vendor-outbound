@@ -40,10 +40,15 @@
 
   <!-- Stylesheets & Typography -->
   <!-- Google Fonts Preconnect & High-Performance Typography -->
+  <!-- Google Fonts Preconnect & High-Performance Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="/assets/css/style.css?v=4.1">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  </noscript>
+  <link rel="stylesheet" href="/assets/css/style.css?v=4.2">
 
   <!-- Structured Data JSON-LD (SEO, GEO & AEO 2026 Schema Graph) -->
   <script type="application/ld+json">
@@ -245,6 +250,7 @@
   ]
 }
   </script>
+  <link rel="preload" as="image" href="/assets/images/programs/family-gathering.webp" type="image/webp" fetchpriority="high">
 </head>
 <body>
         <!-- GLOBAL SITE HEADER (Glassmorphic) -->
@@ -353,7 +359,7 @@
 
   <!-- MOBILE DRAWER NAVIGATION (Accessible) -->
   <div class="mobile-drawer-overlay"></div>
-  <aside class="mobile-drawer" id="mobile-drawer-menu" role="dialog" aria-modal="true" aria-label="Menu Mobile">
+  <div class="mobile-drawer" id="mobile-drawer-menu" role="dialog" aria-modal="true" aria-label="Menu Navigasi Mobile">
     <div class="drawer-header">
       <a href="/" class="brand-logo" aria-label="Vendor Outbound Beranda">
           <img src="/assets/images/logo/logo-fix.webp" alt="Vendor Outbound Logo" class="brand-logo-icon" width="42" height="42">
@@ -405,7 +411,7 @@
         Resmi: +62 822-1122-1909
       </p>
     </div>
-  </aside>
+  </div>
 
 <main id="main-content">
   
@@ -431,27 +437,27 @@
           <!-- LEFT COLUMN: MEDIA GALLERY -->
           <div class="pdp-gallery">
             <div class="pdp-main-image-wrap">
-              <img id="pdp-main-img" src="/assets/images/programs/family-gathering.webp" alt="Paket Corporate Gathering Akbar" class="pdp-main-image">
+              <img id="pdp-main-img" src="/assets/images/programs/family-gathering.webp" alt="Paket Corporate Gathering Akbar" class="pdp-main-image" width="850" height="635" decoding="async" fetchpriority="high" loading="eager">
             </div>
             <div class="pdp-thumbnails">
               
     <button type="button" class="pdp-thumb-item active" data-img="/assets/images/programs/family-gathering.webp" aria-label="Main View">
-      <img src="/assets/images/programs/family-gathering.webp" alt="Main View" class="pdp-thumb-img" loading="lazy">
+      <img src="/assets/images/programs/family-gathering.webp" alt="Main View" class="pdp-thumb-img" loading="lazy" width="850" height="635" decoding="async">
       <span class="pdp-thumb-caption">Main View</span>
     </button>
   
     <button type="button" class="pdp-thumb-item " data-img="/assets/images/programs/team-building.webp" aria-label="Fun Games">
-      <img src="/assets/images/programs/team-building.webp" alt="Fun Games" class="pdp-thumb-img" loading="lazy">
+      <img src="/assets/images/programs/team-building.webp" alt="Fun Games" class="pdp-thumb-img" loading="lazy" width="850" height="635" decoding="async">
       <span class="pdp-thumb-caption">Fun Games</span>
     </button>
   
     <button type="button" class="pdp-thumb-item " data-img="/assets/images/hero/hero-landscape.webp" aria-label="Panggung Acara">
-      <img src="/assets/images/hero/hero-landscape.webp" alt="Panggung Acara" class="pdp-thumb-img" loading="lazy">
+      <img src="/assets/images/hero/hero-landscape.webp" alt="Panggung Acara" class="pdp-thumb-img" loading="lazy" width="1000" height="558" decoding="async">
       <span class="pdp-thumb-caption">Panggung Acara</span>
     </button>
   
     <button type="button" class="pdp-thumb-item " data-img="/assets/images/programs/camping-safari.webp" aria-label="Gala Dinner">
-      <img src="/assets/images/programs/camping-safari.webp" alt="Gala Dinner" class="pdp-thumb-img" loading="lazy">
+      <img src="/assets/images/programs/camping-safari.webp" alt="Gala Dinner" class="pdp-thumb-img" loading="lazy" width="850" height="635" decoding="async">
       <span class="pdp-thumb-caption">Gala Dinner</span>
     </button>
   
@@ -618,7 +624,7 @@
       </div>
       <p class="pdp-review-quote">"Acara gathering 300 karyawan kami berjalan sangat megah dan tertib. Mulai dari games siang hingga gala dinner malam hari sangat berkesan!"</p>
       <div class="pdp-review-author">
-        <img src="/assets/images/testimonials/avatar-3.webp" alt="Drs. Wahyu Hidayat" class="pdp-review-avatar" loading="lazy">
+        <img src="/assets/images/testimonials/avatar-3.webp" alt="Drs. Wahyu Hidayat" class="pdp-review-avatar" loading="lazy" width="300" height="300" decoding="async">
         <div>
           <div class="pdp-review-name">Drs. Wahyu Hidayat</div>
           <div class="pdp-review-role">Ketua Bapor — BUMN Sektor Energi</div>
@@ -636,7 +642,7 @@
       </div>
       <p class="pdp-review-quote">"Panggung dan sound system-nya standar konser, live band yang disediakan juga sangat memukau. Karyawan sangat puas!"</p>
       <div class="pdp-review-author">
-        <img src="/assets/images/testimonials/avatar-1.webp" alt="Farhan Maulana" class="pdp-review-avatar" loading="lazy">
+        <img src="/assets/images/testimonials/avatar-1.webp" alt="Farhan Maulana" class="pdp-review-avatar" loading="lazy" width="300" height="300" decoding="async">
         <div>
           <div class="pdp-review-name">Farhan Maulana</div>
           <div class="pdp-review-role">Internal Communications — Perusahaan FMCG</div>
@@ -654,7 +660,7 @@
       </div>
       <p class="pdp-review-quote">"Sangat membantu panitia kantor yang sibuk. Semua urusan konsumsi dan rundown di-handle rapi tanpa celah."</p>
       <div class="pdp-review-author">
-        <img src="/assets/images/testimonials/avatar-2.webp" alt="dr. Linda Permatasari" class="pdp-review-avatar" loading="lazy">
+        <img src="/assets/images/testimonials/avatar-2.webp" alt="dr. Linda Permatasari" class="pdp-review-avatar" loading="lazy" width="300" height="300" decoding="async">
         <div>
           <div class="pdp-review-name">dr. Linda Permatasari</div>
           <div class="pdp-review-role">Ketua Panitia HUT RS Swasta Surabaya</div>
@@ -736,7 +742,7 @@
           
     <article class="pdp-related-card">
       <div class="pdp-related-media">
-        <img src="/assets/images/programs/team-building.webp" alt="Team Building Perusahaan" loading="lazy">
+        <img src="/assets/images/programs/team-building.webp" alt="Team Building Perusahaan" loading="lazy" width="850" height="635" decoding="async">
       </div>
       <div class="pdp-related-body">
         <div>
@@ -757,7 +763,7 @@
   
     <article class="pdp-related-card">
       <div class="pdp-related-media">
-        <img src="/assets/images/programs/family-gathering.webp" alt="Family Gathering Ceria" loading="lazy">
+        <img src="/assets/images/programs/family-gathering.webp" alt="Family Gathering Ceria" loading="lazy" width="850" height="635" decoding="async">
       </div>
       <div class="pdp-related-body">
         <div>
@@ -778,7 +784,7 @@
   
     <article class="pdp-related-card">
       <div class="pdp-related-media">
-        <img src="/assets/images/programs/family-gathering.webp" alt="Family Gathering Premium" loading="lazy">
+        <img src="/assets/images/programs/family-gathering.webp" alt="Family Gathering Premium" loading="lazy" width="850" height="635" decoding="async">
       </div>
       <div class="pdp-related-body">
         <div>
@@ -807,7 +813,7 @@
       <div class="container">
         <div class="cta-banner-wrapper">
           <div class="cta-banner-bg-media">
-            <img src="/assets/images/hero/hero-landscape.webp" alt="Konsultasi Outbound Eksklusif Batu Malang" loading="lazy">
+            <img src="/assets/images/hero/hero-landscape.webp" alt="Konsultasi Outbound Eksklusif Batu Malang" loading="lazy" width="1000" height="558" decoding="async">
           </div>
           <div class="cta-banner-overlay"></div>
 
@@ -933,13 +939,13 @@
   </footer>
 
   <!-- FLOATING ACTIONS (WhatsApp & Back To Top) -->
-  <div class="floating-actions" aria-label="Aksi Cepat">
+  <div class="floating-actions">
     <button type="button" class="back-to-top-btn" aria-label="Kembali ke atas">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
     </button>
 
     <a href="https://wa.me/6282211221909?text=Halo%20Vendor%20Outbound%2C%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20kegiatan%20outbound." target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" aria-label="Konsultasi WhatsApp - Respons Cepat 24 Jam">
-      <span class="floating-wa-badge" aria-label="Pemberitahuan">!</span>
+      <span class="floating-wa-badge" aria-hidden="true">!</span>
       <span class="floating-wa-tooltip" aria-hidden="true">
         <span class="floating-wa-dot"></span>
         Respons Cepat 24 Jam
@@ -951,6 +957,6 @@
   </div>
 
 
-  <script src="/assets/js/script.js?v=4.1" defer></script>
+  <script src="/assets/js/script.js?v=4.2" defer></script>
 </body>
 </html>

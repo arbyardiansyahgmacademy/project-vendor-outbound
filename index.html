@@ -38,12 +38,19 @@
   <link rel="icon" type="image/webp" href="/assets/images/logo/logo-fix.webp">
   <link rel="apple-touch-icon" href="/assets/images/logo/logo-fix.webp">
 
+  <!-- High-Priority LCP Hero Image Preload -->
+  <link rel="preload" as="image" href="/assets/images/hero/hero-landscape.webp" type="image/webp" fetchpriority="high">
+
   <!-- Stylesheets & Typography -->
   <!-- Google Fonts Preconnect & High-Performance Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="/assets/css/style.css?v=4.1">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  </noscript>
+  <link rel="stylesheet" href="/assets/css/style.css?v=4.2">
 
   <!-- Structured Data JSON-LD (SEO, GEO & AEO 2026 Schema Graph) -->
   <script type="application/ld+json">
@@ -321,7 +328,7 @@
 
   <!-- MOBILE DRAWER NAVIGATION (Accessible) -->
   <div class="mobile-drawer-overlay"></div>
-  <aside class="mobile-drawer" id="mobile-drawer-menu" role="dialog" aria-modal="true" aria-label="Menu Mobile">
+  <div class="mobile-drawer" id="mobile-drawer-menu" role="dialog" aria-modal="true" aria-label="Menu Navigasi Mobile">
     <div class="drawer-header">
       <a href="/" class="brand-logo" aria-label="Vendor Outbound Beranda">
           <img src="/assets/images/logo/logo-fix.webp" alt="Vendor Outbound Logo" class="brand-logo-icon" width="42" height="42">
@@ -373,7 +380,7 @@
         Resmi: +62 822-1122-1909
       </p>
     </div>
-  </aside>
+  </div>
 
   <!-- MAIN CONTENT -->
   <main id="main-content">
@@ -384,9 +391,11 @@
         <img 
           src="/assets/images/hero/hero-landscape.webp" 
           alt="Panorama Alam Pegunungan Jawa Timur untuk Kegiatan Outbound" 
-          width="1920" 
-          height="1080"
+          width="1000" 
+          height="558"
+          loading="eager"
           fetchpriority="high"
+          decoding="async"
         >
       </div>
       <div class="hero-overlay"></div>
@@ -416,7 +425,7 @@
         <!-- 4 ELEGANT HERO CARDS (PANJANG KE ATAS & BESAR, ELEGAN & SEIMBANG) -->
         <div class="hero-category-cards">
           <a href="/paket/outbound-perusahaan" class="hero-cat-card" aria-label="Program Outbound Perusahaan Batu Malang">
-            <img src="/assets/images/programs/team-building.webp" alt="Outbound Perusahaan Batu Malang" fetchpriority="high">
+            <img src="/assets/images/programs/team-building.webp" alt="Outbound Perusahaan Batu Malang" loading="lazy" decoding="async" width="850" height="635">
             <div class="hero-cat-overlay"></div>
             <div class="hero-cat-top">
               <span class="hero-cat-tag">Corporate</span>
@@ -433,7 +442,7 @@
           </a>
 
           <a href="/paket/family-gathering" class="hero-cat-card" aria-label="Program Family Gathering Batu Malang">
-            <img src="/assets/images/programs/family-gathering.webp" alt="Family Gathering Batu Malang" fetchpriority="high">
+            <img src="/assets/images/programs/family-gathering.webp" alt="Family Gathering Batu Malang" loading="lazy" decoding="async" width="850" height="635">
             <div class="hero-cat-overlay"></div>
             <div class="hero-cat-top">
               <span class="hero-cat-tag">Family & Fun</span>
@@ -450,7 +459,7 @@
           </a>
 
           <a href="/paket/outbound-sekolah" class="hero-cat-card" aria-label="Program Outbound Sekolah Batu Malang">
-            <img src="/assets/images/programs/outbound-sekolah.webp" alt="Outbound Sekolah Batu Malang" fetchpriority="high">
+            <img src="/assets/images/programs/outbound-sekolah.webp" alt="Outbound Sekolah Batu Malang" loading="lazy" decoding="async" width="850" height="635">
             <div class="hero-cat-overlay"></div>
             <div class="hero-cat-top">
               <span class="hero-cat-tag">Edukasi</span>
@@ -467,7 +476,7 @@
           </a>
 
           <a href="/paket/outbound-wisata" class="hero-cat-card" aria-label="Program Wisata dan Adventure Batu Malang">
-            <img src="/assets/images/programs/rafting.webp" alt="Wisata & Adventure Batu Malang" fetchpriority="high">
+            <img src="/assets/images/programs/rafting.webp" alt="Wisata & Adventure Batu Malang" loading="lazy" decoding="async" width="720" height="538">
             <div class="hero-cat-overlay"></div>
             <div class="hero-cat-top">
               <span class="hero-cat-tag">Adventure</span>
@@ -593,7 +602,7 @@
 
           <div class="split-media">
             <div class="split-media-card">
-              <img src="/assets/images/programs/team-building.webp" alt="Simulasi Team Building Kolaboratif di Batu Malang" loading="lazy">
+              <img src="/assets/images/programs/team-building.webp" alt="Simulasi Team Building Kolaboratif di Batu Malang" loading="lazy" width="850" height="635" decoding="async">
               <div class="floating-pill-badge">
                 <div class="floating-pill-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -629,7 +638,7 @@
           <!-- Featured Card 1: Team Building -->
           <article class="featured-pkg-card">
             <div class="featured-pkg-media">
-              <img src="/assets/images/programs/team-building.webp" alt="Team Building Corporate Batu Malang" loading="lazy">
+              <img src="/assets/images/programs/team-building.webp" alt="Team Building Corporate Batu Malang" loading="lazy" width="850" height="635" decoding="async">
               <span class="featured-pkg-tag tag-corporate">🔥 Best Seller</span>
               <button type="button" class="featured-pkg-heart" aria-label="Simpan Paket Team Building">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
@@ -668,7 +677,7 @@
           <!-- Featured Card 2: Family Gathering -->
           <article class="featured-pkg-card">
             <div class="featured-pkg-media">
-              <img src="/assets/images/programs/family-gathering.webp" alt="Family Gathering Batu Malang" loading="lazy">
+              <img src="/assets/images/programs/family-gathering.webp" alt="Family Gathering Batu Malang" loading="lazy" width="850" height="635" decoding="async">
               <span class="featured-pkg-tag tag-family">✨ Favorit Keluarga</span>
               <button type="button" class="featured-pkg-heart" aria-label="Simpan Paket Family Gathering">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
@@ -707,7 +716,7 @@
           <!-- Featured Card 3: Rafting & Adventure -->
           <article class="featured-pkg-card">
             <div class="featured-pkg-media">
-              <img src="/assets/images/programs/rafting.webp" alt="Wisata Rafting dan Offroad Batu Malang" loading="lazy">
+              <img src="/assets/images/programs/rafting.webp" alt="Wisata Rafting dan Offroad Batu Malang" loading="lazy" width="720" height="538" decoding="async">
               <span class="featured-pkg-tag tag-adventure">⚡ Adventure Hits</span>
               <button type="button" class="featured-pkg-heart" aria-label="Simpan Paket Adventure">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
@@ -831,7 +840,7 @@
         <div class="bento-gallery-grid">
           <!-- Featured Big Item (7 cols) -->
           <div class="bento-item bento-span-7 bento-featured" data-category="perusahaan" tabindex="0" role="button" aria-label="Buka foto team building">
-            <img src="/assets/images/programs/team-building.webp" alt="Simulasi Team Building Outdoor di Kawasan Wisata Batu" loading="lazy">
+            <img src="/assets/images/programs/team-building.webp" alt="Simulasi Team Building Outdoor di Kawasan Wisata Batu" loading="lazy" width="850" height="635" decoding="async">
             <div class="bento-overlay">
               <div class="bento-caption">
                 <span class="bento-kicker">Team Building Perusahaan • Batu Malang</span>
@@ -842,7 +851,7 @@
 
           <!-- Item 2 (5 cols) -->
           <div class="bento-item bento-span-5" data-category="wisata" tabindex="0" role="button" aria-label="Buka foto rafting">
-            <img src="/assets/images/programs/rafting.webp" alt="Arung Jeram Petualangan Rafting Sungai" loading="lazy">
+            <img src="/assets/images/programs/rafting.webp" alt="Arung Jeram Petualangan Rafting Sungai" loading="lazy" width="720" height="538" decoding="async">
             <div class="bento-overlay">
               <div class="bento-caption">
                 <span class="bento-kicker">Adventure Rafting • Jawa Timur</span>
@@ -853,7 +862,7 @@
 
           <!-- Item 3 (4 cols) -->
           <div class="bento-item bento-span-4" data-category="sekolah" tabindex="0" role="button" aria-label="Buka foto outbound sekolah">
-            <img src="/assets/images/programs/outbound-sekolah.webp" alt="Simulasi Karakter Kepemimpinan Siswa" loading="lazy">
+            <img src="/assets/images/programs/outbound-sekolah.webp" alt="Simulasi Karakter Kepemimpinan Siswa" loading="lazy" width="850" height="635" decoding="async">
             <div class="bento-overlay">
               <div class="bento-caption">
                 <span class="bento-kicker">LDKS Kepemimpinan • Campsite Pegunungan</span>
@@ -864,7 +873,7 @@
 
           <!-- Item 4 (4 cols) -->
           <div class="bento-item bento-span-4" data-category="family" tabindex="0" role="button" aria-label="Buka foto family gathering">
-            <img src="/assets/images/programs/family-gathering.webp" alt="Fun Games Rekreasi Family Gathering" loading="lazy">
+            <img src="/assets/images/programs/family-gathering.webp" alt="Fun Games Rekreasi Family Gathering" loading="lazy" width="850" height="635" decoding="async">
             <div class="bento-overlay">
               <div class="bento-caption">
                 <span class="bento-kicker">Family Gathering • Resort Highland</span>
@@ -875,7 +884,7 @@
 
           <!-- Item 5 (4 cols) -->
           <div class="bento-item bento-span-4" data-category="wisata" tabindex="0" role="button" aria-label="Buka foto offroad camping">
-            <img src="/assets/images/programs/camping-safari.webp" alt="Highland Camping dan Safari Offroad 4x4" loading="lazy">
+            <img src="/assets/images/programs/camping-safari.webp" alt="Highland Camping dan Safari Offroad 4x4" loading="lazy" width="850" height="635" decoding="async">
             <div class="bento-overlay">
               <div class="bento-caption">
                 <span class="bento-kicker">Offroad Petualangan • Bromo Sunrise</span>
@@ -906,12 +915,12 @@
           <!-- Article 1 -->
           <article class="article-card">
             <div class="article-media">
-              <img src="/assets/images/programs/team-building.webp" alt="Manfaat Team Building untuk Perusahaan" loading="lazy">
+              <img src="/assets/images/programs/team-building.webp" alt="Manfaat Team Building untuk Perusahaan" loading="lazy" width="850" height="635" decoding="async">
               <span class="badge badge-maroon article-badge">Corporate HR</span>
             </div>
             <div class="article-body">
               <div class="article-meta">
-                <span style="display:inline-flex; align-items:center; gap:6px;"><img src="/assets/images/author-artikel/author-artikel-arby-ardiansyah.webp" alt="Arby Ardiansyah" style="width:20px; height:20px; border-radius:50%; object-fit:cover;">Arby Ardiansyah</span> • <span>5 Menit Baca</span> • <span>Okt 2026</span>
+                <span style="display:inline-flex; align-items:center; gap:6px;"><img src="/assets/images/author-artikel/author-artikel-arby-ardiansyah.webp" alt="Arby Ardiansyah" style="width:20px; height:20px; border-radius:50%; object-fit:cover;" width="120" height="120" decoding="async">Arby Ardiansyah</span> • <span>5 Menit Baca</span> • <span>Okt 2026</span>
               </div>
               <h3 class="article-title">
                 <a href="/blog/manfaat-team-building-untuk-perusahaan">Manfaat Nyata Team Building Terstruktur untuk Budaya Kerja Perusahaan</a>
@@ -929,12 +938,12 @@
           <!-- Article 2 -->
           <article class="article-card">
             <div class="article-media">
-              <img src="/assets/images/hero/hero-landscape.webp" alt="Tips Memilih Lokasi Outbound yang Tepat" loading="lazy">
+              <img src="/assets/images/hero/hero-landscape.webp" alt="Tips Memilih Lokasi Outbound yang Tepat" loading="lazy" width="1000" height="558" decoding="async">
               <span class="badge badge-warm article-badge">Panduan Lokasi</span>
             </div>
             <div class="article-body">
               <div class="article-meta">
-                <span style="display:inline-flex; align-items:center; gap:6px;"><img src="/assets/images/author-artikel/author-artikel-arby-ardiansyah.webp" alt="Arby Ardiansyah" style="width:20px; height:20px; border-radius:50%; object-fit:cover;">Arby Ardiansyah</span> • <span>6 Menit Baca</span> • <span>Okt 2026</span>
+                <span style="display:inline-flex; align-items:center; gap:6px;"><img src="/assets/images/author-artikel/author-artikel-arby-ardiansyah.webp" alt="Arby Ardiansyah" style="width:20px; height:20px; border-radius:50%; object-fit:cover;" width="120" height="120" decoding="async">Arby Ardiansyah</span> • <span>6 Menit Baca</span> • <span>Okt 2026</span>
               </div>
               <h3 class="article-title">
                 <a href="/blog/tips-memilih-lokasi-outbound">Panduan Memilih Lokasi Outbound di Jawa Timur yang Aman dan Ideal</a>
@@ -952,12 +961,12 @@
           <!-- Article 3 -->
           <article class="article-card">
             <div class="article-media">
-              <img src="/assets/images/programs/family-gathering.webp" alt="Perbedaan Outbound dan Gathering" loading="lazy">
+              <img src="/assets/images/programs/family-gathering.webp" alt="Perbedaan Outbound dan Gathering" loading="lazy" width="850" height="635" decoding="async">
               <span class="badge badge-gold article-badge">Konsep Dasar</span>
             </div>
             <div class="article-body">
               <div class="article-meta">
-                <span style="display:inline-flex; align-items:center; gap:6px;"><img src="/assets/images/author-artikel/author-artikel-arby-ardiansyah.webp" alt="Arby Ardiansyah" style="width:20px; height:20px; border-radius:50%; object-fit:cover;">Arby Ardiansyah</span> • <span>4 Menit Baca</span> • <span>Okt 2026</span>
+                <span style="display:inline-flex; align-items:center; gap:6px;"><img src="/assets/images/author-artikel/author-artikel-arby-ardiansyah.webp" alt="Arby Ardiansyah" style="width:20px; height:20px; border-radius:50%; object-fit:cover;" width="120" height="120" decoding="async">Arby Ardiansyah</span> • <span>4 Menit Baca</span> • <span>Okt 2026</span>
               </div>
               <h3 class="article-title">
                 <a href="/blog/perbedaan-outbound-dan-gathering">Memahami Perbedaan Mendasar Antara Outbound dan Gathering Perusahaan</a>
@@ -995,10 +1004,10 @@
           <!-- Testimonial 1 -->
           <article class="testimonial-card">
             <div class="testimonial-author-row">
-              <img src="/assets/images/testimonials/avatar-1.webp" alt="Ratna Dewi Sartika - HR Department Head" class="testimonial-avatar" loading="lazy">
+              <img src="/assets/images/testimonials/avatar-1.webp" alt="Ratna Dewi Sartika - HR Department Head" class="testimonial-avatar" loading="lazy" width="300" height="300" decoding="async">
               <div class="testimonial-author-info">
                 <div class="testimonial-name">Ratna Dewi Sartika</div>
-                <div class="testimonial-stars" aria-label="Rating 5 bintang">
+                <div class="testimonial-stars" role="img" aria-label="Rating 5 bintang">
                   <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                   <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                   <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -1022,10 +1031,10 @@
           <!-- Testimonial 2 -->
           <article class="testimonial-card">
             <div class="testimonial-author-row">
-              <img src="/assets/images/testimonials/avatar-2.webp" alt="Bambang Hariyanto - Ketua Panitia Gathering" class="testimonial-avatar" loading="lazy">
+              <img src="/assets/images/testimonials/avatar-2.webp" alt="Bambang Hariyanto - Ketua Panitia Gathering" class="testimonial-avatar" loading="lazy" width="300" height="300" decoding="async">
               <div class="testimonial-author-info">
                 <div class="testimonial-name">Bambang Hariyanto</div>
-                <div class="testimonial-stars" aria-label="Rating 5 bintang">
+                <div class="testimonial-stars" role="img" aria-label="Rating 5 bintang">
                   <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                   <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                   <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -1049,10 +1058,10 @@
           <!-- Testimonial 3 -->
           <article class="testimonial-card">
             <div class="testimonial-author-row">
-              <img src="/assets/images/testimonials/avatar-3.webp" alt="Dr. Nurul Fadilah, M.Pd - Kepala Sekolah" class="testimonial-avatar" loading="lazy">
+              <img src="/assets/images/testimonials/avatar-3.webp" alt="Dr. Nurul Fadilah, M.Pd - Kepala Sekolah" class="testimonial-avatar" loading="lazy" width="300" height="300" decoding="async">
               <div class="testimonial-author-info">
                 <div class="testimonial-name">Dr. Nurul Fadilah, M.Pd</div>
-                <div class="testimonial-stars" aria-label="Rating 5 bintang">
+                <div class="testimonial-stars" role="img" aria-label="Rating 5 bintang">
                   <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                   <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                   <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -1154,7 +1163,7 @@
       <div class="container">
         <div class="cta-banner-wrapper">
           <div class="cta-banner-bg-media">
-            <img src="/assets/images/hero/hero-landscape.webp" alt="Panorama Outbound Alam Pegunungan Batu Malang" loading="lazy">
+            <img src="/assets/images/hero/hero-landscape.webp" alt="Panorama Outbound Alam Pegunungan Batu Malang" loading="lazy" width="1000" height="558" decoding="async">
           </div>
           <div class="cta-banner-overlay"></div>
 
@@ -1279,13 +1288,13 @@
   </footer>
 
   <!-- FLOATING ACTIONS (WhatsApp & Back To Top) -->
-  <div class="floating-actions" aria-label="Aksi Cepat">
+  <div class="floating-actions">
     <button type="button" class="back-to-top-btn" aria-label="Kembali ke atas">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
     </button>
 
     <a href="https://wa.me/6282211221909?text=Halo%20Vendor%20Outbound%2C%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20kegiatan%20outbound." target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" aria-label="Konsultasi WhatsApp - Respons Cepat 24 Jam">
-      <span class="floating-wa-badge" aria-label="Pemberitahuan">!</span>
+      <span class="floating-wa-badge" aria-hidden="true">!</span>
       <span class="floating-wa-tooltip" aria-hidden="true">
         <span class="floating-wa-dot"></span>
         Respons Cepat 24 Jam
@@ -1325,6 +1334,6 @@
     </div>
   </dialog>
 
-  <script src="/assets/js/script.js?v=4.1" defer></script>
+  <script src="/assets/js/script.js?v=4.2" defer></script>
 </body>
 </html>
