@@ -3,6 +3,47 @@
  * Pure Vanilla JavaScript — Modular, Accessible, High Performance
  */
 
+// 0. SPECULATION RULES API (INSTANT PRERENDERING & PREFETCH ENGINE)
+try {
+  if (HTMLScriptElement.supports && HTMLScriptElement.supports('speculationrules')) {
+    if (!document.querySelector('script[type="speculationrules"]')) {
+      const specScript = document.createElement('script');
+      specScript.type = 'speculationrules';
+      specScript.textContent = JSON.stringify({
+        prefetch: [
+          {
+            source: 'document',
+            where: {
+              and: [
+                { href_matches: '/*' },
+                { not: { href_matches: '/*\\?*(^|&)action=*' } },
+                { not: { selector_matches: '.no-prerender, [rel~=nofollow], a[target="_blank"], a[href^="mailto:"], a[href^="tel:"], a[href*="wa.me"], a[href*="whatsapp.com"]' } }
+              ]
+            },
+            eagerness: 'eager'
+          }
+        ],
+        prerender: [
+          {
+            source: 'document',
+            where: {
+              and: [
+                { href_matches: '/*' },
+                { not: { href_matches: '/*\\?*(^|&)action=*' } },
+                { not: { selector_matches: '.no-prerender, [rel~=nofollow], a[target="_blank"], a[href^="mailto:"], a[href^="tel:"], a[href*="wa.me"], a[href*="whatsapp.com"]' } }
+              ]
+            },
+            eagerness: 'moderate'
+          }
+        ]
+      });
+      document.head.appendChild(specScript);
+    }
+  }
+} catch (e) {
+  /* Progressive enhancement fallback handled by initPageTransitionsAndPrefetch */
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initStickyHeader();
   initMobileDrawer();
@@ -17,6 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initPdpGallery();
   initHeroMagazineSlider();
   initBlogFilter();
+  initPageTransitionsAndPrefetch();
+  initActiveNavSync();
 });
 
 /* ==========================================================================
@@ -25,6 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function initStickyHeader() {
   const header = document.querySelector('.site-header');
   if (!header) return;
+  if (header.__stickyInitialized) return;
+  header.__stickyInitialized = true;
 
   const handleScroll = () => {
     if (header.classList.contains('header-solid')) return;
@@ -49,6 +94,8 @@ function initMobileDrawer() {
   const overlay = document.querySelector('.mobile-drawer-overlay');
 
   if (!drawer || !openBtn) return;
+  if (drawer.__drawerInitialized) return;
+  drawer.__drawerInitialized = true;
 
   const openDrawer = () => {
     drawer.classList.add('is-active');
@@ -421,6 +468,8 @@ function initShareAndCopy() {
 function initBackToTop() {
   const backToTopBtn = document.querySelector('.back-to-top-btn');
   if (!backToTopBtn) return;
+  if (backToTopBtn.__bttInitialized) return;
+  backToTopBtn.__bttInitialized = true;
 
   window.addEventListener(
     'scroll',
@@ -716,5 +765,330 @@ function initBlogFilter() {
     });
   });
 }
+
+/* ==========================================================================
+   14. ULTRA-FAST PAGE TRANSITIONS & INSTANT PREFETCH ENGINE (< 200ms)
+   ========================================================================== */
+function initPageTransitionsAndPrefetch() {
+  // 1. Create top progress bar if not exists
+  let progressBar = document.getElementById('page-nav-progress');
+  if (!progressBar) {
+    progressBar = document.createElement('div');
+    progressBar.id = 'page-nav-progress';
+    progressBar.setAttribute('aria-hidden', 'true');
+    document.body.prepend(progressBar);
+  }
+
+  const startProgress = () => {
+    if (!progressBar) return;
+    progressBar.classList.remove('is-done');
+    progressBar.classList.add('is-active');
+    progressBar.style.width = '45%';
+  };
+
+  const finishProgress = () => {
+    if (!progressBar) return;
+    progressBar.classList.add('is-done');
+    setTimeout(() => {
+      progressBar.classList.remove('is-active', 'is-done');
+      progressBar.style.width = '0%';
+    }, 280);
+  };
+
+  window.addEventListener('pageshow', finishProgress);
+
+  // 2. High-speed in-memory HTML page cache
+  const pageCache = new Map();
+  const isSaveData = navigator.connection && navigator.connection.saveData;
+
+  const isInternalHtmlLink = (anchor) => {
+    if (!anchor || !anchor.href) return false;
+    if (anchor.target && anchor.target !== '_self') return false;
+    if (anchor.hasAttribute('download')) return false;
+    if (anchor.getAttribute('rel')?.includes('external')) return false;
+
+    try {
+      const url = new URL(anchor.href, window.location.origin);
+      if (url.origin !== window.location.origin) return false;
+      // Exclude asset files
+      if (/\.(webp|png|jpe?g|svg|pdf|zip|mp4|json|xml|txt|css|js)$/i.test(url.pathname)) return false;
+      return true;
+    } catch {
+      return false;
+    }
+  };
+
+  // Prefetch a URL into memory cache & browser link cache
+  const prefetchPage = async (urlStr) => {
+    if (isSaveData) return;
+    try {
+      const parsed = new URL(urlStr, window.location.origin);
+      const cleanKey = parsed.pathname;
+      if (pageCache.has(cleanKey)) return;
+
+      // Add prefetch link for HTTP cache
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = cleanKey;
+      link.as = 'document';
+      document.head.appendChild(link);
+
+      // Fetch into memory cache
+      fetch(cleanKey, { priority: 'low' })
+        .then((res) => {
+          if (res.ok) return res.text();
+          throw new Error('Failed to prefetch');
+        })
+        .then((html) => {
+          pageCache.set(cleanKey, html);
+        })
+        .catch(() => {});
+    } catch (e) {}
+  };
+
+  // 3. Eagerly prefetch core navigation pages after idle
+  const corePages = ['/', '/tentang-kami', '/produk', '/paket', '/galeri', '/blog', '/kontak'];
+  const idleCallback = window.requestIdleCallback || ((cb) => setTimeout(cb, 250));
+  idleCallback(() => {
+    corePages.forEach((p) => {
+      if (p !== window.location.pathname) {
+        prefetchPage(p);
+      }
+    });
+  });
+
+  // 4. Viewport IntersectionObserver: prefetch links as user scrolls
+  if ('IntersectionObserver' in window && !isSaveData) {
+    const linkObserver = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const a = entry.target;
+            if (isInternalHtmlLink(a)) {
+              prefetchPage(a.href);
+            }
+            obs.unobserve(a);
+          }
+        });
+      },
+      { rootMargin: '250px 0px' }
+    );
+
+    const observeLinks = () => {
+      document.querySelectorAll('a[href^="/"]').forEach((a) => {
+        if (isInternalHtmlLink(a)) linkObserver.observe(a);
+      });
+    };
+    observeLinks();
+    window.__observeLinks = observeLinks;
+  }
+
+  // 5. Pointerdown & Touchstart (instant prefetch ~100ms before click)
+  document.addEventListener(
+    'pointerdown',
+    (e) => {
+      const anchor = e.target.closest('a');
+      if (!anchor || !isInternalHtmlLink(anchor)) return;
+      prefetchPage(anchor.href);
+    },
+    { capture: true, passive: true }
+  );
+
+  document.addEventListener(
+    'pointerenter',
+    (e) => {
+      const anchor = e.target.closest('a');
+      if (!anchor || !isInternalHtmlLink(anchor)) return;
+      prefetchPage(anchor.href);
+    },
+    { capture: true, passive: true }
+  );
+
+  // 6. Master function to re-initialize all page components after navigation
+  const reinitPage = () => {
+    initStickyHeader();
+    initMobileDrawer();
+    initActivityPlanner();
+    initGalleryAndLightbox();
+    initPackageConfigurator();
+    initDynamicTOC();
+    initShareAndCopy();
+    initBackToTop();
+    initScrollAnimations();
+    initContactInquiryForm();
+    initPdpGallery();
+    initHeroMagazineSlider();
+    initBlogFilter();
+    initActiveNavSync();
+    if (window.__observeLinks) window.__observeLinks();
+  };
+
+  // 7. Instant Page Swapper Engine (Sub-200ms duration)
+  let isNavigating = false;
+
+  const navigateTo = async (destinationUrl, pushToHistory = true) => {
+    if (isNavigating) return;
+    const target = new URL(destinationUrl, window.location.origin);
+    const cleanPath = target.pathname;
+
+    // Same page hash navigation
+    if (cleanPath === window.location.pathname) {
+      if (target.hash) {
+        const el = document.querySelector(target.hash);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+          if (pushToHistory) window.history.pushState({ path: destinationUrl }, '', destinationUrl);
+          return;
+        }
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+    }
+
+    isNavigating = true;
+    startProgress();
+
+    try {
+      // 1. Get HTML from memory cache or fetch with 1.8s timeout
+      let html = pageCache.get(cleanPath);
+      if (!html) {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 1800);
+        const res = await fetch(cleanPath, { signal: controller.signal });
+        clearTimeout(timeoutId);
+        if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+        html = await res.text();
+        pageCache.set(cleanPath, html);
+      }
+
+      // 2. Parse new document
+      const parser = new DOMParser();
+      const newDoc = parser.parseFromString(html, 'text/html');
+      const newMain = newDoc.querySelector('#main-content') || newDoc.querySelector('main');
+      const currentMain = document.querySelector('#main-content') || document.querySelector('main');
+
+      if (!newMain || !currentMain) {
+        window.location.href = destinationUrl;
+        return;
+      }
+
+      // 3. Close mobile drawer if open
+      const drawer = document.querySelector('.mobile-drawer');
+      const overlay = document.querySelector('.mobile-drawer-overlay');
+      if (drawer?.classList.contains('is-active')) {
+        drawer.classList.remove('is-active');
+        overlay?.classList.remove('is-active');
+        document.body.style.overflow = '';
+      }
+
+      // 4. Swap Content with View Transition API or snappy CSS fallback
+      const applySwap = () => {
+        document.title = newDoc.title;
+        currentMain.innerHTML = newMain.innerHTML;
+
+        if (newMain.className) currentMain.className = newMain.className;
+
+        if (pushToHistory) {
+          window.history.pushState({ path: destinationUrl }, '', destinationUrl);
+        }
+
+        if (target.hash) {
+          const el = document.querySelector(target.hash);
+          if (el) el.scrollIntoView({ behavior: 'instant' });
+          else window.scrollTo({ top: 0, behavior: 'instant' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+
+        reinitPage();
+      };
+
+      if (document.startViewTransition) {
+        const transition = document.startViewTransition(applySwap);
+        await transition.finished;
+      } else {
+        // Fallback: 80ms fade out, swap, 100ms fade in
+        currentMain.style.transition = 'opacity 80ms ease';
+        currentMain.style.opacity = '0';
+        await new Promise((r) => setTimeout(r, 80));
+
+        applySwap();
+
+        currentMain.style.opacity = '0';
+        requestAnimationFrame(() => {
+          currentMain.style.transition = 'opacity 100ms ease';
+          currentMain.style.opacity = '1';
+        });
+      }
+    } catch (err) {
+      console.warn('Instant navigation fallback to standard load:', err);
+      window.location.href = destinationUrl;
+    } finally {
+      isNavigating = false;
+      finishProgress();
+    }
+  };
+
+  // 8. Intercept clicks on internal clean links
+  document.addEventListener('click', (e) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+
+    const anchor = e.target.closest('a');
+    if (!anchor || !isInternalHtmlLink(anchor)) return;
+
+    const targetUrl = anchor.href;
+    const currentUrl = window.location.href;
+
+    if (targetUrl === currentUrl) {
+      e.preventDefault();
+      return;
+    }
+
+    e.preventDefault();
+    navigateTo(targetUrl, true);
+  });
+
+  // 9. Handle Browser Back & Forward buttons
+  window.addEventListener('popstate', () => {
+    navigateTo(window.location.href, false);
+  });
+}
+
+/* ==========================================================================
+   15. DYNAMIC CLEAN URL ACTIVE NAVIGATION SYNCHRONIZATION
+   ========================================================================== */
+function initActiveNavSync() {
+  const currentPath = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '') || '/';
+  const navLinks = document.querySelectorAll(
+    '.desktop-nav .nav-link, .mobile-nav-list .mobile-nav-link, .mobile-submenu-link, .mega-link'
+  );
+
+  navLinks.forEach((link) => {
+    const rawHref = link.getAttribute('href');
+    if (!rawHref) return;
+
+    const cleanHref = rawHref.split('#')[0].split('?')[0].replace(/\/index\.html$/, '/').replace(/\.html$/, '') || '/';
+
+    const isExactMatch = cleanHref === currentPath;
+    const isParentMatch = cleanHref !== '/' && currentPath.startsWith(cleanHref + '/');
+
+    if (link.classList.contains('nav-link') || link.classList.contains('mobile-nav-link')) {
+      if (isExactMatch || isParentMatch) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    } else if (link.classList.contains('mega-link') || link.classList.contains('mobile-submenu-link')) {
+      if (isExactMatch) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    }
+  });
+}
+
+
 
 

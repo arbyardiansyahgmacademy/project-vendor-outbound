@@ -10,19 +10,19 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/tentang-kami.html</loc>
+    <loc>https://vendoroutbound.id/tentang-kami</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/galeri.html</loc>
+    <loc>https://vendoroutbound.id/galeri</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/kontak.html</loc>
+    <loc>https://vendoroutbound.id/kontak</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -32,31 +32,31 @@
   <!-- 2. HUB PRODUK & KATEGORI UTAMA                                       -->
   <!-- ==================================================================== -->
   <url>
-    <loc>https://vendoroutbound.id/produk.html</loc>
+    <loc>https://vendoroutbound.id/produk</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/produk/outbound-perusahaan.html</loc>
+    <loc>https://vendoroutbound.id/produk/outbound-perusahaan</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/produk/family-gathering.html</loc>
+    <loc>https://vendoroutbound.id/produk/family-gathering</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/produk/outbound-sekolah.html</loc>
+    <loc>https://vendoroutbound.id/produk/outbound-sekolah</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/produk/outbound-wisata.html</loc>
+    <loc>https://vendoroutbound.id/produk/outbound-wisata</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -66,127 +66,127 @@
   <!-- 3. HUB PAKET & 20 DETAIL PAKET OUTBOUND                              -->
   <!-- ==================================================================== -->
   <url>
-    <loc>https://vendoroutbound.id/paket.html</loc>
+    <loc>https://vendoroutbound.id/paket</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/team-building.html</loc>
+    <loc>https://vendoroutbound.id/paket/team-building</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/corporate-gathering.html</loc>
+    <loc>https://vendoroutbound.id/paket/corporate-gathering</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/outbound-perusahaan.html</loc>
+    <loc>https://vendoroutbound.id/paket/outbound-perusahaan</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/fun-games.html</loc>
+    <loc>https://vendoroutbound.id/paket/fun-games</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/leadership-camp.html</loc>
+    <loc>https://vendoroutbound.id/paket/leadership-camp</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/family-gathering.html</loc>
+    <loc>https://vendoroutbound.id/paket/family-gathering</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/hemat.html</loc>
+    <loc>https://vendoroutbound.id/paket/hemat</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/standard.html</loc>
+    <loc>https://vendoroutbound.id/paket/standard</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/premium.html</loc>
+    <loc>https://vendoroutbound.id/paket/premium</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/custom.html</loc>
+    <loc>https://vendoroutbound.id/paket/custom</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/outbound-sekolah.html</loc>
+    <loc>https://vendoroutbound.id/paket/outbound-sekolah</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/pelajar.html</loc>
+    <loc>https://vendoroutbound.id/paket/pelajar</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/character-building.html</loc>
+    <loc>https://vendoroutbound.id/paket/character-building</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/leadership.html</loc>
+    <loc>https://vendoroutbound.id/paket/leadership</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/edukasi.html</loc>
+    <loc>https://vendoroutbound.id/paket/edukasi</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/outbound-wisata.html</loc>
+    <loc>https://vendoroutbound.id/paket/outbound-wisata</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/rafting.html</loc>
+    <loc>https://vendoroutbound.id/paket/rafting</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/offroad.html</loc>
+    <loc>https://vendoroutbound.id/paket/offroad</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/camping.html</loc>
+    <loc>https://vendoroutbound.id/paket/camping</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/paket/wisata.html</loc>
+    <loc>https://vendoroutbound.id/paket/wisata</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -196,43 +196,43 @@
   <!-- 4. BLOG & ARTIKEL WAWASAN OUTBOUND (LENGKAP 6 ARTIKEL)              -->
   <!-- ==================================================================== -->
   <url>
-    <loc>https://vendoroutbound.id/blog.html</loc>
+    <loc>https://vendoroutbound.id/blog</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/blog/manfaat-team-building-untuk-perusahaan.html</loc>
+    <loc>https://vendoroutbound.id/blog/manfaat-team-building-untuk-perusahaan</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/blog/tips-memilih-lokasi-outbound.html</loc>
+    <loc>https://vendoroutbound.id/blog/tips-memilih-lokasi-outbound</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/blog/perbedaan-outbound-dan-gathering.html</loc>
+    <loc>https://vendoroutbound.id/blog/perbedaan-outbound-dan-gathering</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/blog/eksplorasi-offroad-4x4-bromo.html</loc>
+    <loc>https://vendoroutbound.id/blog/eksplorasi-offroad-4x4-bromo</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/blog/gala-dinner-acoustic-bonfire.html</loc>
+    <loc>https://vendoroutbound.id/blog/gala-dinner-acoustic-bonfire</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://vendoroutbound.id/blog/membangun-sinergi-dan-resiliensi-tim.html</loc>
+    <loc>https://vendoroutbound.id/blog/membangun-sinergi-dan-resiliensi-tim</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>

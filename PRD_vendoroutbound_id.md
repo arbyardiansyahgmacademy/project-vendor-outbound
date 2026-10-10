@@ -274,8 +274,8 @@ vendoroutbound.id/
 Contoh:
 
 ```text
-/paket/team-building.html
-/blog/manfaat-team-building-untuk-perusahaan.html
+/paket/team-building
+/blog/manfaat-team-building-untuk-perusahaan
 ```
 
 ---
@@ -431,28 +431,28 @@ Sebelum website launch, buat daftar metadata seluruh URL:
 | URL | Primary Keyword | SEO Title | Title ≤60 | Meta Description | Meta ≤120 | Unique |
 |---|---|---|---|---|---|---|
 | `/` | vendor outbound | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/tentang-kami.html` | tentang Vendor Outbound | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/produk.html` | layanan outbound | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/paket.html` | paket outbound | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/gallery.html` | galeri outbound | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/blog.html` | artikel outbound | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/kontak.html` | kontak Vendor Outbound | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/paket/team-building.html` | team building perusahaan | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/paket/fun-games.html` | fun games perusahaan | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/paket/leadership-camp.html` | leadership camp | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/paket/corporate-gathering.html` | corporate gathering | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/paket/paket-hemat.html` | family gathering hemat | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/paket/paket-standard.html` | family gathering standard | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/paket/paket-premium.html` | family gathering premium | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/paket/paket-custom.html` | family gathering custom | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/paket/outbound-pelajar.html` | outbound pelajar | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/paket/character-building.html` | character building | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/paket/ldks-leadership.html` | LDKS leadership | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/paket/edukasi.html` | edukasi outbound | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/paket/outbound-plus-wisata.html` | outbound wisata | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/paket/outbound-rafting.html` | outbound rafting | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/paket/outbound-offroad.html` | outbound offroad | wajib unik | ✓ | wajib unik | ✓ | ✓ |
-| `/paket/outbound-camping.html` | outbound camping | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/tentang-kami` | tentang Vendor Outbound | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/produk` | layanan outbound | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/paket` | paket outbound | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/gallery` | galeri outbound | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/blog` | artikel outbound | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/kontak` | kontak Vendor Outbound | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/paket/team-building` | team building perusahaan | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/paket/fun-games` | fun games perusahaan | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/paket/leadership-camp` | leadership camp | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/paket/corporate-gathering` | corporate gathering | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/paket/paket-hemat` | family gathering hemat | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/paket/paket-standard` | family gathering standard | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/paket/paket-premium` | family gathering premium | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/paket/paket-custom` | family gathering custom | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/paket/outbound-pelajar` | outbound pelajar | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/paket/character-building` | character building | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/paket/ldks-leadership` | LDKS leadership | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/paket/edukasi` | edukasi outbound | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/paket/outbound-plus-wisata` | outbound wisata | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/paket/outbound-rafting` | outbound rafting | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/paket/outbound-offroad` | outbound offroad | wajib unik | ✓ | wajib unik | ✓ | ✓ |
+| `/paket/outbound-camping` | outbound camping | wajib unik | ✓ | wajib unik | ✓ | ✓ |
 
 Untuk artikel blog, metadata dibuat **satu per satu berdasarkan search intent artikel**.
 
@@ -607,13 +607,13 @@ https://vendoroutbound.id/blog/manfaat-team-building-untuk-perusahaan/
 https://vendoroutbound.id/kontak/
 
 SALAH
-https://vendoroutbound.id/index.html
-https://vendoroutbound.id/tentang-kami.html
-https://vendoroutbound.id/produk.html
-https://vendoroutbound.id/paket.html
-https://vendoroutbound.id/blog.html
-https://vendoroutbound.id/blog/manfaat-team-building.html
-https://vendoroutbound.id/kontak.html
+https://vendoroutbound.id/
+https://vendoroutbound.id/tentang-kami
+https://vendoroutbound.id/produk
+https://vendoroutbound.id/paket
+https://vendoroutbound.id/blog
+https://vendoroutbound.id/blog/manfaat-team-building
+https://vendoroutbound.id/kontak
 ```
 
 ---
@@ -706,7 +706,7 @@ SALAH
 /team_building/
 /TeamBuilding/
 /team%20building/
-/team-building.html
+/team-building
 /page-team-building/
 /detail-team-building/
 /team-building-2026-01-01/
@@ -768,11 +768,11 @@ Website harus menggunakan routing yang memungkinkan request seperti:
 ditampilkan tanpa perlu menulis:
 
 ```text
-/paket.html
-/paket/outbound-perusahaan.html
-/paket/outbound-perusahaan/team-building.html
-/blog.html
-/blog/manfaat-team-building-untuk-perusahaan.html
+/paket
+/paket/outbound-perusahaan
+/paket/outbound-perusahaan/team-building
+/blog
+/blog/manfaat-team-building-untuk-perusahaan
 ```
 
 ### Rekomendasi untuk Static HTML
@@ -788,14 +788,14 @@ Karena project menggunakan arsitektur HTML5 + CSS3 + Vanilla JavaScript, impleme
 Untuk hosting yang mendukung folder-based routing, pola implementasi dapat berupa:
 
 ```text
-/tentang-kami/index.html
-/produk/index.html
-/paket/index.html
-/paket/outbound-perusahaan/index.html
-/paket/outbound-perusahaan/team-building/index.html
-/blog/index.html
-/blog/manfaat-team-building-untuk-perusahaan/index.html
-/kontak/index.html
+/tentang-kami/
+/produk/
+/paket/
+/paket/outbound-perusahaan/
+/paket/outbound-perusahaan/team-building/
+/blog/
+/blog/manfaat-team-building-untuk-perusahaan/
+/kontak/
 ```
 
 URL yang tampil kepada pengguna:
@@ -874,7 +874,7 @@ Contoh:
 Canonical tidak boleh menggunakan:
 
 ```text
-https://vendoroutbound.id/paket/outbound-perusahaan/team-building.html
+https://vendoroutbound.id/paket/outbound-perusahaan/team-building
 ```
 
 Canonical harus selalu menunjuk ke URL publik yang benar-benar dipakai pengguna.
@@ -900,23 +900,23 @@ Jika sebelumnya terdapat URL dengan `.html`, URL lama tidak boleh dibiarkan menj
 Contoh migrasi:
 
 ```text
-/tentang-kami.html
+/tentang-kami
         ↓ 301
 /tentang-kami/
 
-/produk.html
+/produk
         ↓ 301
 /produk/
 
-/paket.html
+/paket
         ↓ 301
 /paket/
 
-/blog.html
+/blog
         ↓ 301
 /blog/
 
-/blog/manfaat-team-building.html
+/blog/manfaat-team-building
         ↓ 301
 /blog/manfaat-team-building/
 ```
@@ -961,10 +961,10 @@ Semua internal link pada website WAJIB menggunakan Clean URL.
 ### SALAH
 
 ```html
-<a href="/tentang-kami.html">Tentang Kami</a>
-<a href="/produk.html">Produk</a>
-<a href="/paket.html">Paket</a>
-<a href="/blog.html">Blog</a>
+<a href="/tentang-kami">Tentang Kami</a>
+<a href="/produk">Produk</a>
+<a href="/paket">Paket</a>
+<a href="/blog">Blog</a>
 ```
 
 Tidak boleh ada internal link yang mengarah ke URL `.html`.
@@ -1002,10 +1002,10 @@ Contoh:
 Jangan masukkan:
 
 ```text
-/index.html
-/tentang-kami.html
-/paket.html
-/blog.html
+/
+/tentang-kami
+/paket
+/blog
 ```
 
 ---
@@ -1042,7 +1042,7 @@ Jangan:
 ```html
 <meta
   property="og:url"
-  content="https://vendoroutbound.id/paket/outbound-perusahaan/team-building.html"
+  content="https://vendoroutbound.id/paket/outbound-perusahaan/team-building"
 >
 ```
 
@@ -1079,9 +1079,9 @@ Contoh:
 Hindari:
 
 ```text
-/blog/article-01.html
-/blog/post-123.html
-/blog/2026/10/07/judul-artikel.html
+/blog/article-01
+/blog/post-123
+/blog/2026/10/07/judul-artikel
 /blog/index.php?id=123
 ```
 
@@ -1145,8 +1145,8 @@ Jika halaman layanan lebih spesifik dibutuhkan:
 Jangan mencampur pola URL tanpa alasan, misalnya:
 
 ```text
-/produk/team-building.html
-/layanan-family-gathering.html
+/produk/team-building
+/layanan-family-gathering
 /service/outbound.php
 ```
 
@@ -1939,31 +1939,31 @@ Berikan contoh alur kegiatan, bukan janji jadwal final.
 
 ## Outbound Perusahaan
 
-- `/paket/team-building.html`
-- `/paket/fun-games.html`
-- `/paket/leadership-camp.html`
-- `/paket/corporate-gathering.html`
+- `/paket/team-building`
+- `/paket/fun-games`
+- `/paket/leadership-camp`
+- `/paket/corporate-gathering`
 
 ## Family Gathering
 
-- `/paket/paket-hemat.html`
-- `/paket/paket-standard.html`
-- `/paket/paket-premium.html`
-- `/paket/paket-custom.html`
+- `/paket/paket-hemat`
+- `/paket/paket-standard`
+- `/paket/paket-premium`
+- `/paket/paket-custom`
 
 ## Outbound Sekolah
 
-- `/paket/outbound-pelajar.html`
-- `/paket/character-building.html`
-- `/paket/ldks-leadership.html`
-- `/paket/edukasi.html`
+- `/paket/outbound-pelajar`
+- `/paket/character-building`
+- `/paket/ldks-leadership`
+- `/paket/edukasi`
 
 ## Outbound Wisata & Adventure
 
-- `/paket/outbound-plus-wisata.html`
-- `/paket/outbound-rafting.html`
-- `/paket/outbound-offroad.html`
-- `/paket/outbound-camping.html`
+- `/paket/outbound-plus-wisata`
+- `/paket/outbound-rafting`
+- `/paket/outbound-offroad`
+- `/paket/outbound-camping`
 
 ---
 
@@ -2457,8 +2457,8 @@ Gunakan:
 ```text
 /vendoroutbound.id/
 vendoroutbound.id/paket/
-vendoroutbound.id/paket/team-building.html
-vendoroutbound.id/blog/manfaat-team-building.html
+vendoroutbound.id/paket/team-building
+vendoroutbound.id/blog/manfaat-team-building
 ```
 
 Jangan:
