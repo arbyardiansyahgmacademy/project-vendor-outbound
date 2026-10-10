@@ -380,20 +380,20 @@ ul, ol {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
-/* Permanent Solid Navbar for PDP Detail Pages */
+/* Permanent Solid Navbar for PDP & Article Detail Pages */
 .site-header.header-solid {
-  padding: 14px 0;
-  background: rgba(27, 5, 11, 0.96);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
+  padding: 10px 0 !important;
+  background: rgba(27, 5, 11, 0.98) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
 }
 
 .site-header.header-solid .nav-wrapper {
-  background: transparent;
-  border-color: transparent;
-  padding: 0;
+  background: transparent !important;
+  border-color: transparent !important;
+  padding: 0 16px !important;
 }
 
 .nav-wrapper {
@@ -3753,7 +3753,7 @@ img.mag-author-avatar,
   position: relative;
   background-color: var(--maroon-950);
   color: #FFFFFF;
-  padding: 150px 0 70px 0;
+  padding: 86px 0 28px 0;
   overflow: hidden;
 }
 
@@ -3771,25 +3771,37 @@ img.mag-author-avatar,
 }
 
 .breadcrumb {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 20px;
+  gap: 10px;
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 16px;
   flex-wrap: wrap;
+  line-height: 1.5;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
 }
 
 .breadcrumb a {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-smooth);
 }
 
 .breadcrumb a:hover {
   color: var(--accent-warm);
+  text-decoration: underline;
 }
 
 .breadcrumb-separator {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.45);
+  user-select: none;
 }
 
 .page-h1 {
@@ -4821,7 +4833,7 @@ img.mag-author-avatar,
 
   /* Inner Pages Shared Header */
   .page-header {
-    padding: 108px 0 44px 0;
+    padding: 76px 0 24px 0;
   }
 
   .page-h1 {
@@ -4836,9 +4848,10 @@ img.mag-author-avatar,
   }
 
   .breadcrumb {
-    margin-bottom: 14px;
+    margin-bottom: 18px;
     font-size: 0.775rem;
-    gap: 6px;
+    padding: 5px 14px;
+    gap: 8px;
   }
 
   /* Homepage Hero Section */
@@ -5142,7 +5155,7 @@ img.mag-author-avatar,
   }
 
   .page-header {
-    padding: 104px 0 38px 0;
+    padding: 66px 0 20px 0;
   }
 
   .page-h1 {
@@ -7385,24 +7398,26 @@ img.mag-author-avatar,
    ELEGANT PACKAGE DETAIL PRODUCT LAYOUT (PDP) - REFERENCE MOCKUP STYLE
    ========================================================================== */
 
-/* Breadcrumb bar for PDP with fixed navbar offset */
+/* Breadcrumb bar for PDP with fixed navbar offset - SLIM & PROPORTIONAL */
 .pdp-breadcrumb-wrap {
-  padding-top: 96px;
-  padding-bottom: 14px;
-  background: var(--bg-surface-elevated);
-  border-bottom: 1px solid var(--border-subtle);
+  padding-top: 72px !important;
+  padding-bottom: 8px !important;
+  background: var(--bg-surface-elevated, #FFFFFF) !important;
+  border-bottom: 1px solid var(--border-subtle, #E8E1DE) !important;
   position: relative;
   z-index: 10;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
 }
 
 .pdp-breadcrumb {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.84rem;
+  gap: 10px;
+  font-size: 0.875rem;
+  font-weight: 500;
   flex-wrap: wrap;
   margin-bottom: 0;
-  line-height: 1.4;
+  line-height: 1.6;
 }
 
 .pdp-breadcrumb a {
@@ -7414,12 +7429,13 @@ img.mag-author-avatar,
 
 .pdp-breadcrumb a:hover {
   color: var(--maroon-700);
+  text-decoration: underline;
 }
 
 .pdp-breadcrumb-sep {
-  color: var(--text-muted);
-  opacity: 0.5;
-  font-size: 0.8rem;
+  color: var(--text-subtle);
+  opacity: 0.6;
+  font-size: 0.85rem;
   user-select: none;
 }
 
@@ -7954,21 +7970,21 @@ img.mag-author-avatar,
 /* RESPONSIVE QUERIES */
 @media (max-width: 992px) {
   .site-header.header-solid {
-    padding: 12px 0;
+    padding: 10px 0 !important;
   }
   .pdp-breadcrumb-wrap {
-    padding-top: 90px;
-    padding-bottom: 12px;
+    padding-top: 68px !important;
+    padding-bottom: 7px !important;
   }
   .pdp-split {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 28px;
   }
   .pdp-gallery {
     position: static;
   }
   .pdp-main-image-wrap {
-    height: 380px;
+    height: 340px;
   }
   .pdp-why-grid,
   .pdp-reviews-grid,
@@ -7979,65 +7995,143 @@ img.mag-author-avatar,
 
 @media (max-width: 640px) {
   .site-header.header-solid {
-    padding: 10px 0;
+    padding: 8px 0 !important;
   }
   .pdp-breadcrumb-wrap {
-    padding-top: 84px;
-    padding-bottom: 10px;
+    padding-top: 60px !important;
+    padding-bottom: 6px !important;
   }
   .pdp-breadcrumb {
-    font-size: 0.775rem;
-    gap: 6px;
+    font-size: 0.75rem;
+    gap: 5px;
+    line-height: 1.35;
   }
   .pdp-section {
-    padding: 24px 0 40px 0;
+    padding: 12px 0 24px 0;
+  }
+  .pdp-split {
+    gap: 16px;
   }
   .pdp-main-image-wrap {
-    height: 260px;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    min-height: 190px;
+    max-height: 230px;
+    border-radius: 10px;
+  }
+  .pdp-thumbnails {
+    gap: 5px;
+    margin-top: 6px;
+  }
+  .pdp-thumb-item {
+    padding: 2px;
+    border-radius: 6px;
   }
   .pdp-thumb-img {
-    height: 52px;
+    height: 40px;
+    border-radius: 5px;
+  }
+  .pdp-thumb-caption {
+    font-size: 0.6rem;
+    margin-top: 2px;
   }
   .pdp-title {
-    font-size: 1.65rem;
+    font-size: 1.35rem;
     line-height: 1.25;
     margin-bottom: 6px;
   }
   .pdp-subtitle {
-    font-size: 0.9375rem;
-    margin-bottom: 12px;
+    font-size: 0.825rem;
+    line-height: 1.42;
+    margin-bottom: 8px;
+  }
+  .pdp-rating-row {
+    flex-wrap: wrap;
+    gap: 4px 6px;
+    margin-bottom: 10px;
+    font-size: 0.775rem;
+  }
+  .pdp-rating-count {
+    font-size: 0.725rem;
   }
   .pdp-price-wrap {
-    gap: 8px;
-    margin-bottom: 14px;
-    padding-bottom: 14px;
+    gap: 6px 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+  .pdp-price-strike {
+    font-size: 0.875rem;
   }
   .pdp-price-current {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+  }
+  .pdp-price-chip {
+    font-size: 0.7rem;
+    padding: 2px 7px;
+  }
+  .pdp-desc {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .pdp-specs-pills {
+    gap: 5px;
+    margin-bottom: 14px;
+  }
+  .pdp-spec-pill {
+    font-size: 0.725rem;
+    padding: 4px 8px;
+  }
+  .pdp-buttons-group {
+    gap: 8px;
+    margin-bottom: 8px;
   }
   .pdp-btn-primary,
   .pdp-btn-secondary {
     width: 100%;
     justify-content: center;
-    min-height: 48px;
-    font-size: 0.9375rem;
+    min-height: 44px;
+    font-size: 0.85rem;
+    padding: 10px 14px;
+    border-radius: 8px;
+  }
+  .pdp-action-note {
+    font-size: 0.725rem;
   }
   .pdp-trust-box {
     grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 10px 12px;
+    margin-top: 12px;
+  }
+  .pdp-trust-item {
+    font-size: 0.775rem;
+    gap: 6px;
   }
   .pdp-why-section,
   .pdp-reviews-section,
   .pdp-faq-section,
   .pdp-related-section {
-    padding: 40px 0;
+    padding: 24px 0;
   }
   .pdp-why-grid,
   .pdp-reviews-grid,
   .pdp-related-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
-  .pdp-thumbnails {
-    gap: 8px;
+  .pdp-why-card {
+    padding: 14px;
+    border-radius: 10px;
+    gap: 10px;
+  }
+  .pdp-why-title {
+    font-size: 0.925rem;
+    margin-bottom: 2px;
+  }
+  .pdp-why-text {
+    font-size: 0.8rem;
+    line-height: 1.45;
   }
 }
 
@@ -8045,35 +8139,59 @@ img.mag-author-avatar,
    ARTICLE & EDITORIAL PAGES DESIGN SYSTEM (ARTICLE-PAGE-MAIN)
    ========================================================================== */
 
-/* Breadcrumb Bar */
+/* Breadcrumb Bar - SLIM & PROPORTIONAL */
 .article-breadcrumb-bar {
-  background: var(--bg-canvas, #FAF7F5);
-  border-bottom: 1px solid var(--border-subtle, #E8E1DE);
-  padding: 104px 0 16px 0;
-  font-size: 0.875rem;
+  background: var(--bg-surface, #FFFFFF) !important;
+  border-bottom: 1px solid var(--border-subtle, #E8E1DE) !important;
+  padding: 72px 0 8px 0 !important;
+  font-size: 0.85rem;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
 }
 .article-breadcrumb-bar nav {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
+  line-height: 1.4;
+  font-weight: 500;
 }
 .article-breadcrumb-bar nav a {
   color: var(--text-muted, #62595D);
   text-decoration: none;
+  font-weight: 500;
   transition: color 0.2s ease;
 }
 .article-breadcrumb-bar nav a:hover {
   color: var(--maroon-700, #6B1426);
+  text-decoration: underline;
 }
 .article-breadcrumb-bar nav span {
   color: var(--text-subtle, #8D8488);
 }
 
+@media (max-width: 992px) {
+  .article-breadcrumb-bar {
+    padding: 68px 0 7px 0 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .article-breadcrumb-bar {
+    padding: 60px 0 6px 0 !important;
+    font-size: 0.75rem;
+  }
+  .article-breadcrumb-bar nav {
+    gap: 5px;
+    line-height: 1.35;
+  }
+}
+
 /* Article Page Layout */
 .article-page-main {
   background: var(--bg-canvas, #FAF7F5);
-  padding: 36px 0 64px 0;
+  padding: 32px 0 60px 0;
 }
 .article-wrapper {
   display: grid;
@@ -8082,9 +8200,20 @@ img.mag-author-avatar,
   align-items: start;
 }
 @media (max-width: 992px) {
+  .article-page-main {
+    padding: 24px 0 48px 0;
+  }
   .article-wrapper {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+}
+@media (max-width: 640px) {
+  .article-page-main {
+    padding: 10px 0 32px 0;
+  }
+  .article-wrapper {
+    gap: 20px;
   }
 }
 
@@ -8098,7 +8227,7 @@ img.mag-author-avatar,
 }
 @media (max-width: 640px) {
   .article-main {
-    padding: 22px 18px;
+    padding: 16px 14px;
     border-radius: 12px;
   }
 }
@@ -8143,9 +8272,47 @@ img.mag-author-avatar,
   margin-bottom: 20px;
 }
 @media (max-width: 640px) {
-  .article-header h1 {
-    font-size: 1.65rem;
+  .news-badge {
+    font-size: 0.65rem;
+    padding: 3px 9px;
+    letter-spacing: 0.03em;
+    white-space: normal;
     line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .article-header h1 {
+    font-size: 1.28rem;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+  .article-meta {
+    padding-top: 8px;
+    gap: 8px;
+  }
+  .author-avatar {
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+  }
+  .author-name {
+    font-size: 0.85rem;
+  }
+  .meta-verified-badge {
+    font-size: 0.65rem;
+    padding: 1px 5px;
+  }
+  .post-meta-details {
+    font-size: 0.725rem;
+    gap: 5px;
+  }
+  .article-hero {
+    margin: 14px 0 18px 0;
+    border-radius: 8px;
+  }
+  .article-hero img {
+    max-height: 200px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
   }
 }
 
@@ -8367,6 +8534,107 @@ img.mag-author-avatar,
 }
 .article-content li {
   margin-bottom: 8px;
+}
+
+@media (max-width: 640px) {
+  .article-content h2 {
+    font-size: 1.22rem;
+    margin: 22px 0 10px 0;
+    line-height: 1.35;
+  }
+  .article-content h3 {
+    font-size: 1.02rem;
+    margin: 16px 0 6px 0;
+  }
+  .article-content p {
+    font-size: 0.8875rem;
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .article-content ul, .article-content ol {
+    margin: 0 0 14px 18px;
+    line-height: 1.6;
+    font-size: 0.8875rem;
+  }
+  .article-summary {
+    padding: 14px 12px;
+    margin-bottom: 20px;
+  }
+  .article-summary h3 {
+    font-size: 0.975rem;
+    margin-bottom: 8px;
+  }
+  .article-summary li {
+    font-size: 0.825rem;
+    line-height: 1.5;
+  }
+  .answer-first-box {
+    padding: 14px 12px;
+    margin: 16px 0;
+  }
+  .answer-first-box p {
+    font-size: 0.8875rem;
+    line-height: 1.6;
+  }
+  .toc-wrapper {
+    margin: 16px 0;
+  }
+  .toc-header {
+    padding: 12px 14px;
+  }
+  .toc-header h3 {
+    font-size: 0.925rem;
+  }
+  .toc-body.open {
+    padding: 12px 14px 14px 14px;
+  }
+  .toc-list li a {
+    font-size: 0.825rem;
+  }
+  .article-quote {
+    padding: 12px 14px;
+    font-size: 0.85rem;
+    margin: 16px 0;
+  }
+  .article-support-image {
+    margin: 20px 0;
+    border-radius: 8px;
+  }
+  .article-support-image img {
+    max-height: 200px;
+  }
+  .cta-band {
+    padding: 18px 14px;
+    margin: 22px 0;
+    border-radius: 10px;
+  }
+  .cta-band h3 {
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+  }
+  .cta-band p {
+    font-size: 0.825rem;
+    margin-bottom: 16px;
+  }
+  .cta-band .btn-wa {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+  .faq-section {
+    margin: 24px 0;
+  }
+  .faq-section h3 {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+  }
+  .faq-question {
+    padding: 12px 14px;
+    font-size: 0.875rem;
+  }
+  .faq-answer-inner {
+    padding: 10px 14px 14px 36px;
+    font-size: 0.825rem;
+  }
 }
 
 /* Answer-First Box / Callout Card */
@@ -8674,7 +8942,32 @@ img.mag-author-avatar,
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 24px 18px;
+    padding: 16px 14px;
+    gap: 10px;
+    margin: 20px 0;
+    border-radius: 10px;
+  }
+  .author-bio .avatar {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    min-height: 64px;
+    max-width: 64px;
+    max-height: 64px;
+    border-width: 3px;
+  }
+  .author-bio .info h4 {
+    font-size: 1.05rem;
+    margin-bottom: 2px;
+  }
+  .author-bio .role {
+    font-size: 0.68rem;
+    margin-bottom: 6px;
+  }
+  .author-bio p {
+    font-size: 0.8rem;
+    line-height: 1.5;
   }
 }
 
@@ -8716,6 +9009,23 @@ img.mag-author-avatar,
 .share-btn.twitter { background: #000000; }
 .share-btn.linkedin { background: #0A66C2; }
 .share-btn.copy { background: var(--maroon-700, #6B1426); }
+
+@media (max-width: 640px) {
+  .share-section {
+    gap: 6px;
+    padding-top: 16px;
+    margin-top: 24px;
+  }
+  .share-section .label {
+    width: 100%;
+    margin-bottom: 4px;
+    font-size: 0.8125rem;
+  }
+  .share-btn {
+    font-size: 0.75rem;
+    padding: 7px 12px;
+  }
+}
 
 /* SIDEBAR COMPONENTS */
 .article-sidebar {
@@ -8983,6 +9293,23 @@ img.mag-author-avatar,
 @media (max-width: 900px) {
   .recommendations.grid-240 {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .article-recommend-section {
+    padding: 32px 0;
+  }
+  .recommendations.grid-240 {
+    gap: 16px;
+  }
+  .recommend-item .thumb {
+    height: 150px;
+  }
+  .recommend-item .body {
+    padding: 16px;
+  }
+  .recommend-item h4 {
+    font-size: 0.975rem;
   }
 }
 .recommend-item {

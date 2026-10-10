@@ -63,11 +63,26 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
+   HELPER: CHECK IF ROUTE IS DETAIL PAGE (PAKET, BLOG, PRODUK)
+   ========================================================================== */
+function isDetailPage(pathname) {
+  const p = pathname || window.location.pathname;
+  return /^\/(paket|blog|produk)\/[^/]+/.test(p);
+}
+
+/* ==========================================================================
    1. STICKY GLASS HEADER ON SCROLL
    ========================================================================== */
 function initStickyHeader() {
   const header = document.querySelector('.site-header');
   if (!header) return;
+
+  // Detail pages (paket/* and blog/* and produk/*) are always solid from initial render
+  if (isDetailPage(window.location.pathname)) {
+    header.classList.add('header-solid');
+    header.classList.remove('is-scrolled');
+  }
+
   if (header.__stickyInitialized) return;
   header.__stickyInitialized = true;
 
@@ -988,6 +1003,22 @@ function initPageTransitionsAndPrefetch() {
         currentMain.innerHTML = newMain.innerHTML;
 
         if (newMain.className) currentMain.className = newMain.className;
+
+        // Synchronize site header state: Solid immediately on detail pages
+        const header = document.querySelector('.site-header');
+        if (header) {
+          if (isDetailPage(cleanPath)) {
+            header.classList.add('header-solid');
+            header.classList.remove('is-scrolled');
+          } else {
+            header.classList.remove('header-solid');
+            if (window.scrollY > 30) {
+              header.classList.add('is-scrolled');
+            } else {
+              header.classList.remove('is-scrolled');
+            }
+          }
+        }
 
         if (pushToHistory) {
           window.history.pushState({ path: destinationUrl }, '', destinationUrl);
